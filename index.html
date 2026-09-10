@@ -3,19 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nómada Café de Especialidad — Camargo, Chihuahua</title>
-<meta name="description" content="Café de especialidad en Ciudad Camargo, Chihuahua. Un punto de encuentro para almas viajeras, buena charla y café que vale la pena parar.">
+<title>Nómada Café de Especialidad — Cafetería Familiar en Camargo, Chihuahua</title>
+<meta name="description" content="Cafetería familiar de especialidad en Ciudad Camargo, Chihuahua. Café de origen, ambiente cálido y una familia camarguense que te recibe como en casa.">
+<link rel="canonical" href="https://gerfier.github.io/nomada-cafe/">
+<meta name="theme-color" content="#241812">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" fetchpriority="high" href="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=1800&q=75">
 
 <meta property="og:title" content="Nómada Café de Especialidad">
-<meta property="og:description" content="Un punto de encuentro para almas viajeras, buena charla y café que vale la pena parar. Ciudad Camargo, Chihuahua.">
+<meta property="og:description" content="Cafetería familiar de especialidad en Ciudad Camargo, Chihuahua. Una familia camarguense que te recibe como en casa.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Nómada Café de Especialidad">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="https://gerfier.github.io/nomada-cafe/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=1200&q=75">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nómada Café de Especialidad">
+<meta name="twitter:description" content="Cafetería familiar de especialidad en Ciudad Camargo, Chihuahua.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=1200&q=75">
 
 <link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Nómada Café de Especialidad",
+  "image": "https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=1200&q=75",
+  "url": "https://gerfier.github.io/nomada-cafe/",
+  "telephone": "+52-648-122-2442",
+  "priceRange": "$",
+  "servesCuisine": "Café de especialidad",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Felipe Ángeles 902-B, Col. San Isidro",
+    "addressLocality": "Ciudad Camargo",
+    "addressRegion": "Chihuahua",
+    "postalCode": "33760",
+    "addressCountry": "MX"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 27.6949191,
+    "longitude": -105.1727737
+  },
+  "sameAs": ["https://www.facebook.com/nomadacafe/"],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "22:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "22:00" }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -36,6 +80,7 @@
 
     <nav class="nav-links" id="navLinks">
       <a href="#nosotros">Nosotros</a>
+      <a href="#familia">La familia</a>
       <a href="#menu">Menú</a>
       <a href="#comunidad">Comunidad</a>
       <a href="#galeria">Galería</a>
@@ -57,7 +102,7 @@
     <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=1800&q=75');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content container">
-      <p class="eyebrow reveal">Café de especialidad · Ciudad Camargo, Chihuahua</p>
+      <p class="eyebrow reveal">Negocio familiar · Café de especialidad · Camargo, Chihuahua</p>
       <h1 class="hero-title reveal">Nómada</h1>
       <p class="hero-tagline reveal">Un punto de encuentro para almas viajeras, buena charla<br class="br-desktop"> y café que vale la pena parar.</p>
       <div class="hero-actions reveal">
@@ -98,13 +143,32 @@
     <div class="about-text">
       <p class="eyebrow reveal">Nuestra historia</p>
       <h2 class="reveal">No es solo un café.<br>Es una pausa.</h2>
-      <p class="reveal">En Nómada creemos que el café es una excusa para conectar. Seleccionamos grano de especialidad, cuidamos cada método de extracción y construimos un espacio donde puedes quedarte a trabajar, encontrarte con amigos o simplemente estar un rato.</p>
+      <p class="reveal">Somos una familia de Camargo que cree que el café es una excusa para conectar. Seleccionamos grano de especialidad, cuidamos cada método de extracción a mano y construimos un espacio donde puedes quedarte a trabajar, encontrarte con amigos o simplemente estar un rato.</p>
       <p class="reveal">Porque todo viajero, tarde o temprano, necesita un lugar al cual volver. Camargo es nuestro punto de partida — y esta barra, nuestro campamento base.</p>
       <ul class="about-stats reveal">
         <li><strong>100%</strong><span>Grano de especialidad</span></li>
         <li><strong>#1</strong><span>Café en Ciudad Camargo</span></li>
         <li><strong>7am–10pm</strong><span>Abrimos todos los días</span></li>
       </ul>
+    </div>
+  </section>
+
+  <!-- FAMILIA -->
+  <!-- IMPORTANTE: esta foto es una imagen de muestra (no es la familia real). Reemplácenla por una foto real de ustedes antes de publicar, y firmen con sus nombres si quieren. -->
+  <section id="familia" class="familia container">
+    <div class="familia-media reveal">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=75" alt="Café con arte latte junto a plantas — foto de muestra, pendiente de reemplazar por una foto real de la familia" loading="lazy">
+      <div class="familia-badge">
+        <span>Negocio familiar</span>
+        <span>100% de Camargo</span>
+      </div>
+    </div>
+    <div class="familia-text">
+      <p class="eyebrow reveal">Quiénes somos</p>
+      <h2 class="reveal">Una familia detrás de cada taza</h2>
+      <p class="reveal">Nómada nació en nuestra propia mesa, entre pruebas de tueste y muchas tazas de más. Hoy seguimos siendo nosotros —la misma familia— quienes muelen el café, atienden las mesas y recuerdan cómo te gusta tu bebida.</p>
+      <p class="reveal">Cuando entras por esa puerta no eres un cliente número tal. Eres alguien a quien nos gusta ver seguido — y con el tiempo, ojalá, un poco de familia también.</p>
+      <p class="familia-signature reveal">— La familia Nómada</p>
     </div>
   </section>
 
@@ -137,8 +201,8 @@
           <div class="value-icon">
             <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 8v13h16V8l-8-5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6"/></svg>
           </div>
-          <h3>Hecho en Camargo</h3>
-          <p>Orgullosamente parte de nuestra comunidad chihuahuense, para nuestra gente.</p>
+          <h3>Familiar y 100% local</h3>
+          <p>Somos una familia de Camargo. Cada visita se queda aquí, en tu comunidad — no en una franquicia.</p>
         </div>
       </div>
     </div>
@@ -202,10 +266,10 @@
         <h2 class="reveal">Un lugar para coincidir</h2>
         <p class="reveal">Nómada también es el foro de Camargo: noches de música en vivo, club de lectura, arte local en las paredes y mercados de emprendedores. Si tienes una idea para reunir gente, aquí hay una mesa para ti.</p>
         <div class="testimonial reveal">
-          <p>&ldquo;Desde que Nómada abrió, es mi segunda oficina. El café es increíble y siempre hay alguien con quien platicar.&rdquo;</p>
+          <p>&ldquo;Aquí no hay clientes de una sola vez. Si vienes una vez, la próxima ya sabemos cómo te gusta el café.&rdquo;</p>
           <div class="testimonial-foot">
             <span class="stars">★★★★★</span>
-            <span>Reseña de cliente frecuente · Tripadvisor</span>
+            <span>Un mensaje de la familia Nómada</span>
           </div>
         </div>
       </div>
@@ -264,7 +328,7 @@
           <svg viewBox="0 0 24 24" fill="none"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1.5a11 11 0 0 0 5.5 5.5L15 13l5 2v2c0 1-1 2-2 2C10.6 19 4 12.4 4 5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
           <div>
             <strong><a href="tel:+526481222442">+52 648 122 2442</a></strong>
-            <span>Llámanos o mándanos WhatsApp</span>
+            <span>Llámanos o <a href="https://wa.me/526481222442?text=Hola%20N%C3%B3mada%2C%20quiero%20preguntar%20algo" target="_blank" rel="noopener">escríbenos por WhatsApp</a></span>
           </div>
         </div>
 
@@ -305,7 +369,7 @@
   <section class="newsletter">
     <div class="container newsletter-inner reveal">
       <div>
-        <h2>Sé parte de la comunidad Nómada</h2>
+        <h2>Únete a la familia Nómada</h2>
         <p>Entérate de eventos, cafés de temporada y noches de música. Sin spam, lo prometemos.</p>
       </div>
       <form id="newsletterForm" class="newsletter-form">
@@ -327,7 +391,7 @@
         </svg>
         <span>Nómada</span>
       </a>
-      <p>Café de especialidad · Ciudad Camargo, Chihuahua</p>
+      <p>Negocio familiar · Café de especialidad · Ciudad Camargo, Chihuahua</p>
     </div>
 
     <nav class="footer-links">
@@ -352,6 +416,25 @@
   <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
   <img id="lightboxImg" src="" alt="">
 </div>
+
+<a class="whatsapp-fab" href="https://wa.me/526481222442?text=Hola%20N%C3%B3mada%2C%20quiero%20preguntar%20algo" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 9.3c.3-1 1-1.2 1.4-1.2s.7 0 .9.5.7 1.7.8 1.8.1.3 0 .5-.2.3-.4.5-.4.4-.2.8c.2.4 1 1.6 2.1 2.2 1.1.7 1.3.6 1.6.5s.9-.9 1.1-1.2.5-.3.8-.2 1.8.8 2.1 1 .5.3.5.5-.1 1.2-.6 1.7-1.7 1.2-3 .7c-1.3-.5-3.5-1.8-4.7-3.7-.9-1.4-.9-2.6-.8-3Z" fill="currentColor"/></svg>
+</a>
+
+<nav class="mobile-actionbar" aria-label="Acciones rápidas">
+  <a href="tel:+526481222442">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1.5a11 11 0 0 0 5.5 5.5L15 13l5 2v2c0 1-1 2-2 2C10.6 19 4 12.4 4 5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <span>Llamar</span>
+  </a>
+  <a href="https://wa.me/526481222442?text=Hola%20N%C3%B3mada%2C%20quiero%20preguntar%20algo" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <span>WhatsApp</span>
+  </a>
+  <a href="https://www.google.com/maps/place/N%C3%B3mada+-+caf%C3%A9+de+especialidad/@27.6949191,-105.1753486,17z/data=!4m6!3m5!1s0x8694af40a3528479:0xcb410e351bfee46a!8m2!3d27.6949191!4d-105.1727737" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+    <span>Cómo llegar</span>
+  </a>
+</nav>
 
 <script src="script.js"></script>
 </body>

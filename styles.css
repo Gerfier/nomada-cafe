@@ -4,10 +4,10 @@
   --espresso: #241812;
   --espresso-2: #382418;
   --coffee: #6b4226;
-  --terracotta: #c1622d;
-  --terracotta-dark: #a34f22;
+  --terracotta: #a34f22;
+  --terracotta-dark: #7a3a19;
   --gold: #cf9a4c;
-  --sage: #74805a;
+  --sage: #5c6640;
   --cream: #f7efe1;
   --cream-soft: #efe1c9;
   --cream-line: #e2d2b3;
@@ -159,6 +159,20 @@ p{ margin:0 0 1em; }
 .about-stats strong{ font-family:var(--font-display); font-size:1.7rem; color:var(--terracotta); }
 .about-stats span{ font-size:.85rem; color:var(--coffee); }
 
+/* ---------- Familia ---------- */
+.familia{ display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; padding-block:20px 120px; }
+.familia-media{ position:relative; }
+.familia-media img{ border-radius:var(--radius); width:100%; aspect-ratio:4/5; object-fit:cover; }
+.familia-badge{
+  position:absolute; bottom:-22px; left:-22px; background:var(--espresso); color:var(--cream);
+  border-radius:14px; padding:16px 20px; box-shadow:0 14px 34px rgba(36,24,18,.22);
+  display:flex; flex-direction:column; gap:4px; font-size:.85rem; font-weight:600;
+}
+.familia-text h2{ font-size:clamp(2rem, 3.4vw, 2.8rem); }
+.familia-signature{
+  font-family:"Caveat", cursive; font-size:1.7rem; color:var(--terracotta); margin-top:.6em; rotate:-1.5deg;
+}
+
 /* ---------- Values ---------- */
 .values{ padding-block:40px 120px; }
 .values-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:22px; }
@@ -226,6 +240,7 @@ p{ margin:0 0 1em; }
 .visit-row svg{ width:24px; height:24px; color:var(--terracotta); flex-shrink:0; margin-top:2px; }
 .visit-row strong{ display:block; font-weight:600; }
 .visit-row span{ display:block; color:var(--coffee); font-size:.92rem; }
+.visit-row a{ text-decoration:underline; text-decoration-color:var(--cream-line); text-underline-offset:2px; }
 .visit-row a:hover{ color:var(--terracotta); }
 .hours-table{ display:flex; flex-direction:column; gap:2px; }
 .hours-table em{ font-style:normal; color:var(--terracotta); font-weight:600; margin-right:6px; }
@@ -277,11 +292,31 @@ p{ margin:0 0 1em; }
   position:absolute; top:24px; right:28px; background:none; border:none; color:var(--cream); font-size:2.4rem; line-height:1; cursor:pointer;
 }
 
+/* ---------- Focus states ---------- */
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline:2px solid var(--terracotta); outline-offset:3px; border-radius:4px;
+}
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+}
+
+/* ---------- WhatsApp FAB ---------- */
+.whatsapp-fab{
+  position:fixed; right:22px; bottom:22px; z-index:600; width:56px; height:56px; border-radius:50%;
+  background:#25d366; color:#fff; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 10px 24px rgba(20,60,40,.3); transition:transform .25s var(--ease);
+}
+.whatsapp-fab:hover{ transform:scale(1.08); }
+.whatsapp-fab svg{ width:28px; height:28px; }
+
+/* ---------- Mobile action bar ---------- */
+.mobile-actionbar{ display:none; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 980px){
-  .about, .community-grid, .visit-grid{ grid-template-columns:1fr; }
-  .about{ gap:56px; }
-  .about-media{ order:-1; }
+  .about, .familia, .community-grid, .visit-grid{ grid-template-columns:1fr; }
+  .about, .familia{ gap:56px; }
+  .about-media, .familia-media{ order:-1; }
   .community-collage{ height:340px; margin-top:24px; }
   .values-grid{ grid-template-columns:repeat(2,1fr); }
   .menu-grid{ grid-template-columns:1fr; gap:36px; }
@@ -305,4 +340,21 @@ p{ margin:0 0 1em; }
   .hero-actions{ flex-direction:column; align-items:flex-start; }
   .newsletter-inner{ flex-direction:column; align-items:flex-start; }
   .about-badge{ right:12px; bottom:-16px; }
+  .familia-badge{ left:12px; bottom:-16px; }
+
+  body{ padding-bottom:66px; }
+  .whatsapp-fab{ bottom:86px; width:50px; height:50px; }
+  .whatsapp-fab svg{ width:24px; height:24px; }
+
+  .mobile-actionbar{
+    display:flex; position:fixed; left:0; right:0; bottom:0; z-index:550;
+    background:var(--espresso); padding:8px 6px calc(8px + env(safe-area-inset-bottom));
+    box-shadow:0 -6px 20px rgba(0,0,0,.18);
+  }
+  .mobile-actionbar a{
+    flex:1; display:flex; flex-direction:column; align-items:center; gap:3px;
+    color:var(--cream-soft); font-size:.68rem; font-weight:600; padding-block:4px;
+  }
+  .mobile-actionbar svg{ width:20px; height:20px; }
+  .mobile-actionbar a:nth-child(2){ color:#25d366; }
 }
