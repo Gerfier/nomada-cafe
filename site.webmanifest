@@ -6,6 +6,7 @@
   "background_color": "#f7efe1",
   "theme_color": "#241812",
   "icons": [
-    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+    { "src": "images/favicon-180.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "images/nomada-logo-512.png", "sizes": "512x512", "type": "image/png" }
   ]
 }

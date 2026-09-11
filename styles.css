@@ -134,6 +134,11 @@ p{ margin:0 0 1em; }
 }
 @keyframes scrollCue{ 0%{ opacity:1; top:8px;} 70%{ opacity:0; top:22px;} 100%{ opacity:0; top:8px;} }
 
+.hero-seal{
+  position:absolute; right:28px; top:110px; z-index:2; width:84px; height:84px; border-radius:50%;
+  box-shadow:0 10px 26px rgba(0,0,0,.4); rotate:-6deg;
+}
+
 /* ---------- Marquee ---------- */
 .marquee{
   background:var(--espresso); color:var(--cream); overflow:hidden; padding:16px 0; white-space:nowrap;
@@ -272,8 +277,9 @@ p{ margin:0 0 1em; }
 /* ---------- Footer ---------- */
 .footer{ background:var(--espresso); color:var(--cream-soft); padding-top:64px; }
 .footer-inner{ display:flex; justify-content:space-between; gap:32px; flex-wrap:wrap; padding-bottom:40px; border-bottom:1px solid rgba(255,250,243,.1); }
-.footer .brand{ color:var(--white); }
-.footer-brand p{ color:var(--cream-soft); opacity:.7; font-size:.88rem; margin-top:.6em; }
+.footer-logo{ display:inline-block; border-radius:50%; }
+.footer-logo img{ display:block; border-radius:50%; }
+.footer-brand p{ color:var(--cream-soft); opacity:.7; font-size:.88rem; margin-top:.8em; }
 .footer-links{ display:flex; gap:20px; flex-wrap:wrap; align-self:center; }
 .footer-links a:hover{ color:var(--gold); }
 .footer-contact{ display:flex; flex-direction:column; gap:8px; align-self:center; font-size:.92rem; }
@@ -343,6 +349,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   .newsletter-inner{ flex-direction:column; align-items:flex-start; }
   .about-badge{ right:12px; bottom:-16px; }
   .familia-badge{ left:12px; bottom:-16px; }
+  .hero-seal{ width:64px; height:64px; top:78px; right:16px; }
 
   body{ padding-bottom:66px; }
   .whatsapp-fab{ bottom:86px; width:50px; height:50px; }
