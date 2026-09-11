@@ -34,7 +34,6 @@ All photos are now real — pulled from their Instagram ([@ganasdenomadacafe](ht
 
 - **`#familia` section** — currently signed "La familia Nómada." Swap in real first names if the family is comfortable with that; it's a small change that makes the note feel even more personal.
 - **Menu items & prices** in the `#menu` section — these are illustrative placeholders, not their real menu.
-- **Phone number** — unresolved. Two different numbers turned up in research (+52 648 122 2442, currently on the site, and 648 118 90 23) and Instagram doesn't list one at all. **Confirm the real number before this goes live** — it's on the visit section, the WhatsApp button, the mobile action bar, and the JSON-LD `telephone` field.
 - **Newsletter form** — currently front-end only (shows a "¡Gracias!" confirmation but doesn't send anywhere). Wire it to Mailchimp, Buttondown, a Google Form, or similar.
 - **Hours** — still from the original Google Maps listing; worth confirming now that the address itself turned out to be wrong.
 - **More photos** — if the family wants a fuller gallery or a proper carousel, save more images directly from the Instagram app (there's no way to fetch them programmatically) and drop them in `images/`.
