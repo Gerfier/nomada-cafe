@@ -223,6 +223,8 @@ p{ margin:0 0 1em; }
 /* ---------- Gallery ---------- */
 .gallery{ padding-block:120px; }
 .gallery h2{ font-size:clamp(2rem,3.4vw,2.6rem); }
+.gallery-intro{ color:var(--coffee); margin-top:.4em; }
+.gallery-intro a{ color:var(--terracotta); text-decoration:underline; text-underline-offset:2px; }
 .gallery-grid{ display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:220px; gap:18px; margin-top:56px; }
 .gallery-item{
   padding:0; border:none; border-radius:14px; overflow:hidden; cursor:zoom-in; background:none; position:relative;

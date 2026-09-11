@@ -2,7 +2,7 @@
 
 A single-page marketing site for **Nómada Café de Especialidad**, a specialty coffee shop in Ciudad Camargo, Chihuahua, México.
 
-Live info used to build this: 5.0★ rated, #1 coffee spot in Ciudad Camargo (Tripadvisor), located at Felipe Ángeles 902-B, Col. San Isidro, open daily.
+Live info used to build this: 5.0★ rated, #1 coffee spot in Ciudad Camargo (Tripadvisor), open daily, located at Allende 105, Col. Centro (per their Instagram [@ganasdenomadacafe](https://www.instagram.com/ganasdenomadacafe/) — this superseded an earlier, incorrect address sourced from Google Maps).
 
 ## Stack
 
@@ -16,6 +16,7 @@ favicon.svg         coffee-cup mark used as the tab icon
 site.webmanifest     "Add to Home Screen" metadata
 robots.txt          crawler access (points to sitemap.xml)
 sitemap.xml         single-URL sitemap for search engines
+images/             real photos, pulled from Instagram @ganasdenomadacafe
 ```
 
 ## Run it locally
@@ -29,21 +30,14 @@ python3 -m http.server 8000
 
 ## Before you launch — please customize
 
-This ships with **stock photography** (Unsplash) as placeholders so the layout and vibe are visible immediately. Swap these for real photos of the shop, drinks, and — especially — the family before going live:
+All photos are now real — pulled from their Instagram ([@ganasdenomadacafe](https://www.instagram.com/ganasdenomadacafe/)) and saved locally under `images/`, not hotlinked (Instagram's CDN blocks that; links 403 within minutes). Menu copy is still illustrative.
 
-- Hero background (`.hero-bg` in `index.html`)
-- "Nuestra historia" photo
-- **`#familia` section — highest priority.** This is a stock photo standing in for a real photo of the family. It's marked with an HTML comment (`<!-- IMPORTANTE: ... -->`) right above the section. Swap the photo, and consider signing the note with real first names instead of just "La familia Nómada" — that's the single change that will make the site feel most like *them*.
-- Community collage (3 photos)
-- Gallery grid (6 photos)
-
-Also double-check / update:
-
-- **Menu items & prices** in the `#menu` section — these are illustrative placeholders.
-- **Instagram link** in the footer/visit section — currently points to instagram.com generically; add the real handle.
+- **`#familia` section** — currently signed "La familia Nómada." Swap in real first names if the family is comfortable with that; it's a small change that makes the note feel even more personal.
+- **Menu items & prices** in the `#menu` section — these are illustrative placeholders, not their real menu.
+- **Phone number** — unresolved. Two different numbers turned up in research (+52 648 122 2442, currently on the site, and 648 118 90 23) and Instagram doesn't list one at all. **Confirm the real number before this goes live** — it's on the visit section, the WhatsApp button, the mobile action bar, and the JSON-LD `telephone` field.
 - **Newsletter form** — currently front-end only (shows a "¡Gracias!" confirmation but doesn't send anywhere). Wire it to Mailchimp, Buttondown, a Google Form, or similar.
-- **Hours/phone/address** — pulled from the current Google Maps / Tripadvisor listing; confirm they're still accurate. If they change, update them in three places: the visible HTML, the `CafeOrCoffeeShop` JSON-LD block in `<head>`, and the Google Business Profile listing itself.
-- **WhatsApp number** — the floating button, mobile action bar, and visit section all link to `wa.me/526481222442`. Update everywhere if the number changes.
+- **Hours** — still from the original Google Maps listing; worth confirming now that the address itself turned out to be wrong.
+- **More photos** — if the family wants a fuller gallery or a proper carousel, save more images directly from the Instagram app (there's no way to fetch them programmatically) and drop them in `images/`.
 
 ## SEO notes
 
