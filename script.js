@@ -1,11 +1,22 @@
-// Sticky nav background on scroll
-const nav = document.getElementById('siteNav');
-const onScroll = () => {
-  if (window.scrollY > 60) nav.classList.add('scrolled');
-  else nav.classList.remove('scrolled');
-};
-document.addEventListener('scroll', onScroll, { passive: true });
-onScroll();
+// "Abierto ahora" status chip — computed client-side against store hours
+// Mon–Sat 7:00–22:00, Sun 9:00–22:00
+function updateStatus() {
+  const chip = document.getElementById('statusChip');
+  const text = document.getElementById('statusText');
+  if (!chip || !text) return;
+
+  const now = new Date();
+  const day = now.getDay(); // 0 = Sunday .. 6 = Saturday
+  const hour = now.getHours() + now.getMinutes() / 60;
+  const opens = day === 0 ? 9 : 7;
+  const closes = 22;
+  const isOpen = hour >= opens && hour < closes;
+
+  chip.classList.toggle('is-closed', !isOpen);
+  text.textContent = isOpen ? 'Abierto ahora' : 'Cerrado';
+}
+updateStatus();
+setInterval(updateStatus, 60 * 1000);
 
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
@@ -33,49 +44,60 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 revealEls.forEach(el => revealObserver.observe(el));
 
-// Gallery lightbox
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-const lightboxClose = document.getElementById('lightboxClose');
+// Menu tabs
+const MENU = {
+  'Espresso': [
+    ['Espresso', '$35'],
+    ['Americano', '$40'],
+    ['Cortado', '$45'],
+    ['Cappuccino', '$50'],
+    ['Latte', '$52'],
+    ['Mocha', '$55']
+  ],
+  'Métodos': [
+    ['V60', '$55'],
+    ['Chemex', '$60'],
+    ['Prensa francesa', '$55'],
+    ['Cold brew', '$50']
+  ],
+  'Especiales': [
+    ['Nómada latte <em>(canela y piloncillo)</em>', '$58'],
+    ['Latte de temporada', '$58'],
+    ['Chai latte', '$52'],
+    ['Chocolate caliente', '$48']
+  ],
+  'Para acompañar': [
+    ['Pan dulce local', '$25'],
+    ['Waffles', '$65'],
+    ['Bagel', '$55'],
+    ['Repostería artesanal', '$35']
+  ]
+};
 
-document.querySelectorAll('.gallery-item').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const full = btn.getAttribute('data-full');
-    const alt = btn.querySelector('img')?.getAttribute('alt') || '';
-    lightboxImg.src = full;
-    lightboxImg.alt = alt;
-    lightbox.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-  });
-});
+const menuTabs = document.getElementById('menuTabs');
+const menuItems = document.getElementById('menuItems');
 
-function closeLightbox() {
-  lightbox.classList.remove('is-open');
-  document.body.style.overflow = '';
-  lightboxImg.src = '';
+function renderMenu(tab) {
+  const list = MENU[tab] || [];
+  menuItems.innerHTML = list.map(([name, price]) => (
+    '<div class="menu-item">' +
+      '<span class="menu-item-name">' + name + '</span>' +
+      '<i class="menu-item-leader"></i>' +
+      '<b class="menu-item-price">' + price + '</b>' +
+    '</div>'
+  )).join('');
 }
-lightboxClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) closeLightbox();
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeLightbox();
-});
 
-// Newsletter form (front-end only — wire up to your email provider of choice)
-const newsletterForm = document.getElementById('newsletterForm');
-newsletterForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const input = newsletterForm.querySelector('input');
-  const button = newsletterForm.querySelector('button');
-  const originalLabel = button.textContent;
-  button.textContent = '¡Gracias!';
-  button.disabled = true;
-  setTimeout(() => {
-    button.textContent = originalLabel;
-    button.disabled = false;
-    input.value = '';
-  }, 2200);
+menuTabs.querySelectorAll('.menu-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    menuTabs.querySelectorAll('.menu-tab').forEach(b => {
+      b.classList.remove('is-active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-selected', 'true');
+    renderMenu(btn.dataset.tab);
+  });
 });
 
 // Footer year

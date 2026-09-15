@@ -12,8 +12,8 @@
 <link rel="apple-touch-icon" href="images/favicon-180.png">
 <link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" fetchpriority="high" href="images/nomada-chemex-pourover.jpg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&family=Anton&display=swap" rel="stylesheet">
+<link rel="preload" as="image" fetchpriority="high" href="images/nomada-storefront-sign.jpg">
 
 <meta property="og:title" content="Nómada Café de Especialidad">
 <meta property="og:description" content="Entras como desconocido, sales siendo familia. Café de especialidad en Ciudad Camargo, Chihuahua.">
@@ -62,27 +62,25 @@
 
 <a class="skip-link" href="#inicio">Saltar al contenido</a>
 
-<header class="nav" id="siteNav">
-  <div class="nav-inner">
-    <a class="brand" href="#inicio">
-      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <path d="M10 18h22a2 2 0 0 1 2 2v6c0 8.5-6.9 14-14 14s-14-5.5-14-14v-6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-        <path d="M34 21h3a5 5 0 0 1 0 10h-2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <path d="M16 12c-1.5 1.7-1.5 3 0 4.7M22 12c-1.5 1.7-1.5 3 0 4.7M28 12c-1.5 1.7-1.5 3 0 4.7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <span>Nómada</span>
-    </a>
+<header class="site-header" id="siteHeader">
+  <div class="header-inner container">
+    <a class="brand-word" href="#inicio">Nómada</a>
 
-    <nav class="nav-links" id="navLinks">
+    <nav class="header-nav" id="navLinks">
       <a href="#nosotros">Nosotros</a>
-      <a href="#familia">La familia</a>
       <a href="#menu">Menú</a>
       <a href="#comunidad">Comunidad</a>
-      <a href="#galeria">Galería</a>
       <a href="#visitanos">Visítanos</a>
     </nav>
 
-    <a class="btn btn-small btn-outline nav-cta" href="#visitanos">Cómo llegar</a>
+    <span class="status-chip" id="statusChip">
+      <span class="status-dot" id="statusDot" aria-hidden="true"></span>
+      <span id="statusText">Abierto ahora</span>
+    </span>
+
+    <a class="icon-btn whatsapp-btn" href="https://wa.me/526481469847?text=Hola%20N%C3%B3mada%2C%20quiero%20preguntar%20algo" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 9.3c.3-1 1-1.2 1.4-1.2s.7 0 .9.5.7 1.7.8 1.8.1.3 0 .5-.2.3-.4.5-.4.4-.2.8c.2.4 1 1.6 2.1 2.2 1.1.7 1.3.6 1.6.5s.9-.9 1.1-1.2.5-.3.8-.2 1.8.8 2.1 1 .5.3.5.5-.1 1.2-.6 1.7-1.7 1.2-3 .7c-1.3-.5-3.5-1.8-4.7-3.7-.9-1.4-.9-2.6-.8-3Z" fill="currentColor"/></svg>
+    </a>
 
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
@@ -92,222 +90,144 @@
 
 <main>
 
-  <!-- HERO -->
-  <section id="inicio" class="hero">
-    <div class="hero-bg" style="background-image:url('images/nomada-chemex-pourover.jpg');"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content container">
-      <p class="eyebrow reveal">Negocio familiar · Café de especialidad · Camargo, Chihuahua</p>
-      <h1 class="hero-title reveal">Nómada</h1>
-      <p class="hero-tagline reveal">&ldquo;Entras como desconocido, sales siendo familia.&rdquo;</p>
+  <!-- HERO (passport) -->
+  <section id="inicio" class="hero-passport container">
+    <div class="hero-left">
+      <img class="hero-seal reveal" src="images/nomada-logo-512.png" alt="Sello de Nómada Café de Especialidad" width="86" height="86" loading="eager">
+      <h1 class="hero-word reveal">Nómada</h1>
+      <p class="hero-subhead reveal">Café de especialidad · Camargo, Chihuahua</p>
+      <p class="hero-tagline reveal">Entras como desconocido, sales siendo familia.</p>
+      <p class="hero-lede reveal">Todo viajero, tarde o temprano, necesita un lugar al cual volver. Camargo es nuestro punto de partida — y esta barra, nuestro campamento base.</p>
       <div class="hero-actions reveal">
         <a href="#menu" class="btn btn-primary">Ver el menú</a>
-        <a href="#visitanos" class="btn btn-ghost">Cómo llegar</a>
+        <a href="#visitanos" class="btn btn-dashed">Allende 105, Centro →</a>
       </div>
     </div>
-    <a href="#nosotros" class="scroll-cue" aria-label="Desplázate para ver más">
-      <span></span>
-    </a>
-    <img class="hero-seal" src="images/nomada-logo-512.png" alt="Nómada, café de especialidad" width="96" height="96" loading="lazy">
-  </section>
-
-  <!-- MARQUEE -->
-  <div class="marquee">
-    <div class="marquee-track">
-      <span>Entras como desconocido, sales siendo familia</span><span class="dot">✺</span>
-      <span>Café de especialidad</span><span class="dot">✺</span>
-      <span>Comunidad</span><span class="dot">✺</span>
-      <span>Camargo, Chihuahua</span><span class="dot">✺</span>
-      <span>Entras como desconocido, sales siendo familia</span><span class="dot">✺</span>
-      <span>Café de especialidad</span><span class="dot">✺</span>
-      <span>Comunidad</span><span class="dot">✺</span>
-      <span>Camargo, Chihuahua</span><span class="dot">✺</span>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <section id="nosotros" class="about container">
-    <div class="about-media reveal">
-      <img src="images/nomada-storefront-sign.jpg" alt="Letrero de Nómada, café de especialidad, en la fachada de su local en Camargo" loading="lazy">
-      <div class="about-badge">
+    <div class="hero-photo-card reveal">
+      <img src="images/nomada-storefront-sign.jpg" alt="Fachada de Nómada, café de especialidad, en su local en Camargo" width="900" height="1125" loading="eager" fetchpriority="high">
+      <div class="hero-photo-caption">
+        <span>Allende 105 · Col. Centro</span>
         <span class="stars">★★★★★</span>
-        <span>5.0 en reseñas</span>
       </div>
-    </div>
-    <div class="about-text">
-      <p class="eyebrow reveal">Nuestra historia</p>
-      <h2 class="reveal">No es solo un café.<br>Es una pausa.</h2>
-      <p class="reveal">Somos una familia de Camargo que cree que el café es una excusa para conectar. Seleccionamos grano de especialidad, cuidamos cada método de extracción a mano y construimos un espacio donde puedes quedarte a trabajar, encontrarte con amigos o simplemente estar un rato.</p>
-      <p class="reveal">Porque todo viajero, tarde o temprano, necesita un lugar al cual volver. Camargo es nuestro punto de partida — y esta barra, nuestro campamento base.</p>
-      <ul class="about-stats reveal">
-        <li><strong>100%</strong><span>Grano de especialidad</span></li>
-        <li><strong>#1</strong><span>Café en Ciudad Camargo</span></li>
-        <li><strong>7am–10pm</strong><span>Abrimos todos los días</span></li>
-      </ul>
     </div>
   </section>
 
-  <!-- FAMILIA -->
-  <!-- Foto real via Instagram @ganasdenomadacafe. Si quieren, firmen la nota con nombres reales en vez de "La familia Nómada". -->
-  <section id="familia" class="familia container">
-    <div class="familia-media reveal">
-      <img src="images/nomada-barista-back.jpg" alt="Alguien de la familia Nómada preparando café en la barra, con una playera que dice 'Don't look for love, look for coffee'" loading="lazy">
-      <div class="familia-badge">
-        <span>Negocio familiar</span>
-        <span>100% de Camargo</span>
+  <!-- QUIÉNES SOMOS -->
+  <section id="nosotros" class="quienes">
+    <div class="container quienes-grid">
+      <div class="quienes-media reveal">
+        <img src="images/nomada-chemex-pourover.jpg" alt="Alguien de la familia Nómada preparando un café Chemex a mano" loading="lazy">
+        <div class="quienes-tag">Negocio familiar<br>100% de Camargo</div>
       </div>
-    </div>
-    <div class="familia-text">
-      <p class="eyebrow reveal">Quiénes somos</p>
-      <h2 class="reveal">Una familia detrás de cada taza</h2>
-      <p class="reveal">Nómada nació en nuestra propia mesa, entre pruebas de tueste y muchas tazas de más. Hoy seguimos siendo nosotros —la misma familia— quienes muelen el café, atienden las mesas y recuerdan cómo te gusta tu bebida.</p>
-      <p class="reveal">Cuando entras por esa puerta no eres un cliente número tal. Eres alguien a quien nos gusta ver seguido — y con el tiempo, ojalá, un poco de familia también.</p>
-      <p class="familia-signature reveal">— La familia Nómada</p>
+      <div class="quienes-text">
+        <p class="eyebrow reveal">Quiénes somos</p>
+        <h2 class="reveal">Una familia detrás de cada taza</h2>
+        <p class="reveal">Nómada nació en nuestra propia mesa, entre pruebas de tueste y muchas tazas de más. Hoy seguimos siendo nosotros —la misma familia— quienes muelen el café, atienden las mesas y recuerdan cómo te gusta tu bebida.</p>
+        <p class="reveal">Cuando entras por esa puerta no eres un cliente número tal. Eres alguien a quien nos gusta ver seguido — y con el tiempo, ojalá, un poco de familia también.</p>
+      </div>
     </div>
   </section>
 
-  <!-- VALUES -->
-  <section class="values">
+  <!-- POR QUÉ NÓMADA -->
+  <section class="stamps">
     <div class="container">
-      <div class="values-grid">
-        <div class="value-card reveal">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M4 8h13a2 2 0 0 1 2 2v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8Z" stroke="currentColor" stroke-width="1.6"/><path d="M19 10h1.5a2.5 2.5 0 0 1 0 5H19" stroke="currentColor" stroke-width="1.6"/><path d="M8 4.5c-1 1-1 1.8 0 2.8M12 4.5c-1 1-1 1.8 0 2.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Café de especialidad</h3>
-          <p>Grano seleccionado y tueste cuidado en cada taza, de origen a tu mesa.</p>
+      <h2 class="sr-only">Por qué Nómada</h2>
+      <p class="eyebrow center reveal">Por qué Nómada</p>
+      <div class="stamps-grid">
+        <div class="stamp reveal">
+          <div class="stamp-badge">Café de especialidad</div>
+          <p>Grano seleccionado y tueste cuidado, de origen a tu mesa.</p>
         </div>
-        <div class="value-card reveal">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="9" r="3" stroke="currentColor" stroke-width="1.6"/><circle cx="17" cy="10" r="2.4" stroke="currentColor" stroke-width="1.6"/><path d="M3 19c0-3 2.2-5 5-5s5 2 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M14 19c.3-2.2 1.8-3.6 3.5-3.6 1.9 0 3.5 1.6 3.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Comunidad primero</h3>
-          <p>Un lugar para conversar, crear y coincidir con quien vayas encontrando.</p>
+        <div class="stamp reveal">
+          <div class="stamp-badge">Comunidad primero</div>
+          <p>Música en vivo, club de lectura y arte local en las paredes.</p>
         </div>
-        <div class="value-card reveal">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="12" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Espacio para crear</h3>
-          <p>Wifi, buena luz y mesas con calma para trabajar o simplemente pensar.</p>
+        <div class="stamp reveal">
+          <div class="stamp-badge">Espacio para crear</div>
+          <p>Wifi, buena luz y mesas con calma para trabajar.</p>
         </div>
-        <div class="value-card reveal">
-          <div class="value-icon">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 8v13h16V8l-8-5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="1.6"/></svg>
-          </div>
-          <h3>Familiar y 100% local</h3>
-          <p>Somos una familia de Camargo. Cada visita se queda aquí, en tu comunidad — no en una franquicia.</p>
+        <div class="stamp reveal">
+          <div class="stamp-badge">100% de Camargo</div>
+          <p>Familia local. Cada visita se queda aquí, no en una franquicia.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMUNIDAD (callout) -->
+  <section id="comunidad" class="community-callout">
+    <div class="container">
+      <div class="community-card reveal">
+        <h2 class="sr-only">Comunidad</h2>
+        <p class="testimonial-quote">&ldquo;Aquí no hay clientes de una sola vez. Si vienes una vez, la próxima ya sabemos cómo te gusta el café.&rdquo;</p>
+        <div class="testimonial-foot">
+          <span class="stars">★★★★★</span>
+          <span>Un mensaje de la familia Nómada</span>
+        </div>
+        <p class="community-copy">Nómada también es el foro de Camargo: noches de música en vivo, club de lectura, arte local en las paredes y mercados de emprendedores. Si tienes una idea para reunir gente, aquí hay una mesa para ti.</p>
       </div>
     </div>
   </section>
 
   <!-- MENU -->
-  <section id="menu" class="menu">
-    <div class="container">
-      <p class="eyebrow reveal center">Nuestro menú</p>
-      <h2 class="reveal center">Algo para cada tipo de pausa</h2>
+  <section id="menu" class="menu-dark">
+    <div class="menu-hero-row container">
+      <h2 class="menu-hero-title reveal">Más café, menos<br><span>drama</span></h2>
+      <img class="menu-hero-photo reveal" src="images/nomada-barista-back.jpg" alt="Alguien de la familia Nómada preparando café en la barra" loading="lazy">
+    </div>
 
-      <div class="menu-grid">
-        <div class="menu-group reveal">
-          <h3>Espresso</h3>
-          <ul>
-            <li><span>Espresso</span><i></i><b>$35</b></li>
-            <li><span>Americano</span><i></i><b>$40</b></li>
-            <li><span>Cortado</span><i></i><b>$45</b></li>
-            <li><span>Cappuccino</span><i></i><b>$50</b></li>
-            <li><span>Latte</span><i></i><b>$52</b></li>
-            <li><span>Mocha</span><i></i><b>$55</b></li>
-          </ul>
-        </div>
-        <div class="menu-group reveal">
-          <h3>Métodos alternativos</h3>
-          <ul>
-            <li><span>V60</span><i></i><b>$55</b></li>
-            <li><span>Chemex</span><i></i><b>$60</b></li>
-            <li><span>Prensa francesa</span><i></i><b>$55</b></li>
-            <li><span>Cold brew</span><i></i><b>$50</b></li>
-          </ul>
-        </div>
-        <div class="menu-group reveal">
-          <h3>Especiales Nómada</h3>
-          <ul>
-            <li><span>Nómada latte <em>(canela y piloncillo)</em></span><i></i><b>$58</b></li>
-            <li><span>Latte de temporada</span><i></i><b>$58</b></li>
-            <li><span>Chai latte</span><i></i><b>$52</b></li>
-            <li><span>Chocolate caliente</span><i></i><b>$48</b></li>
-          </ul>
-        </div>
-        <div class="menu-group reveal">
-          <h3>Para acompañar</h3>
-          <ul>
-            <li><span>Pan dulce local</span><i></i><b>$25</b></li>
-            <li><span>Waffles</span><i></i><b>$65</b></li>
-            <li><span>Bagel</span><i></i><b>$55</b></li>
-            <li><span>Repostería artesanal</span><i></i><b>$35</b></li>
-          </ul>
-        </div>
-      </div>
-      <p class="menu-note reveal center">*Precios de referencia — pregúntanos por el menú del día y bebidas de temporada.</p>
+    <div class="menu-heading-row container reveal">
+      <h2>Menú</h2>
+      <span class="menu-ref-note">Precios de referencia · pregúntanos por el menú del día</span>
+    </div>
+
+    <div class="menu-tabs container reveal" id="menuTabs" role="tablist" aria-label="Categorías del menú">
+      <button class="menu-tab is-active" data-tab="Espresso" role="tab" aria-selected="true">Espresso</button>
+      <button class="menu-tab" data-tab="Métodos" role="tab" aria-selected="false">Métodos</button>
+      <button class="menu-tab" data-tab="Especiales" role="tab" aria-selected="false">Especiales</button>
+      <button class="menu-tab" data-tab="Para acompañar" role="tab" aria-selected="false">Para acompañar</button>
+    </div>
+
+    <div class="menu-list container reveal" id="menuItems" aria-live="polite">
+      <div class="menu-item"><span class="menu-item-name">Espresso</span><i class="menu-item-leader"></i><b class="menu-item-price">$35</b></div>
+      <div class="menu-item"><span class="menu-item-name">Americano</span><i class="menu-item-leader"></i><b class="menu-item-price">$40</b></div>
+      <div class="menu-item"><span class="menu-item-name">Cortado</span><i class="menu-item-leader"></i><b class="menu-item-price">$45</b></div>
+      <div class="menu-item"><span class="menu-item-name">Cappuccino</span><i class="menu-item-leader"></i><b class="menu-item-price">$50</b></div>
+      <div class="menu-item"><span class="menu-item-name">Latte</span><i class="menu-item-leader"></i><b class="menu-item-price">$52</b></div>
+      <div class="menu-item"><span class="menu-item-name">Mocha</span><i class="menu-item-leader"></i><b class="menu-item-price">$55</b></div>
     </div>
   </section>
 
-  <!-- COMMUNITY -->
-  <section id="comunidad" class="community">
-    <div class="container community-grid">
-      <div class="community-text">
-        <p class="eyebrow eyebrow-light reveal">Comunidad</p>
-        <h2 class="reveal">Un lugar para coincidir</h2>
-        <p class="reveal">Nómada también es el foro de Camargo: noches de música en vivo, club de lectura, arte local en las paredes y mercados de emprendedores. Si tienes una idea para reunir gente, aquí hay una mesa para ti.</p>
-        <div class="testimonial reveal">
-          <p>&ldquo;Aquí no hay clientes de una sola vez. Si vienes una vez, la próxima ya sabemos cómo te gusta el café.&rdquo;</p>
-          <div class="testimonial-foot">
-            <span class="stars">★★★★★</span>
-            <span>Un mensaje de la familia Nómada</span>
-          </div>
-        </div>
+  <!-- POSTALES DE LA BARRA -->
+  <section id="postales" class="postcards">
+    <div class="container postcards-head reveal">
+      <div>
+        <p class="eyebrow">Comunidad</p>
+        <h2>Postales de la barra</h2>
       </div>
-      <div class="community-collage reveal">
-        <img class="collage-img collage-1" src="images/nomada-canon-hike.jpg" alt="Vaso para llevar de Nómada sostenido frente a un cañón, en una caminata" loading="lazy">
-        <img class="collage-img collage-2" src="images/nomada-laptop-drink.jpg" alt="Bebida fría de Nómada junto a una laptop en una mesa, ambiente para trabajar" loading="lazy">
-        <img class="collage-img collage-3" src="images/nomada-cup-studio-bw.jpg" alt="Vaso para llevar de Nómada, fotografía en blanco y negro" loading="lazy">
-      </div>
+      <span class="postcards-note">Ejemplos de lo que subimos a <a href="https://www.instagram.com/ganasdenomadacafe/" target="_blank" rel="noopener">@ganasdenomadacafe</a> →</span>
+    </div>
+    <div class="postcards-track reveal">
+      <figure class="postcard">
+        <img src="images/nomada-canon-hike.jpg" alt="Vaso para llevar de Nómada sostenido frente a un cañón, en una caminata" loading="lazy">
+        <figcaption>Para llevar, rumbo al cañón</figcaption>
+      </figure>
+      <figure class="postcard">
+        <img src="images/nomada-laptop-drink.jpg" alt="Bebida fría de Nómada junto a una laptop, ambiente para trabajar" loading="lazy">
+        <figcaption>Mesa de trabajo, tarde larga</figcaption>
+      </figure>
+      <figure class="postcard">
+        <img src="images/nomada-chemex-pourover.jpg" alt="Café Nómada preparado en Chemex, a mano" loading="lazy">
+        <figcaption>Chemex, a mano</figcaption>
+      </figure>
+      <figure class="postcard">
+        <img src="images/nomada-cup-studio-bw.jpg" alt="Vaso para llevar de Nómada, fotografía en blanco y negro" loading="lazy">
+        <figcaption>El vaso de siempre</figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section id="galeria" class="gallery">
-    <div class="container">
-      <p class="eyebrow reveal center">Galería</p>
-      <h2 class="reveal center">Momentos Nómada</h2>
-      <p class="gallery-intro reveal center">Directo de nuestro Instagram <a href="https://www.instagram.com/ganasdenomadacafe/" target="_blank" rel="noopener">@ganasdenomadacafe</a>.</p>
-      <div class="gallery-grid">
-        <button class="gallery-item g-tall reveal" data-full="images/nomada-chemex-pourover.jpg">
-          <img src="images/nomada-chemex-pourover.jpg" alt="Café Nómada preparado en Chemex junto a una bolsa de grano de origen" loading="lazy">
-        </button>
-        <button class="gallery-item reveal" data-full="images/nomada-cup-studio-bw.jpg">
-          <img src="images/nomada-cup-studio-bw.jpg" alt="Vaso para llevar de Nómada, fotografía de estudio en blanco y negro" loading="lazy">
-        </button>
-        <button class="gallery-item reveal" data-full="images/nomada-canon-hike.jpg">
-          <img src="images/nomada-canon-hike.jpg" alt="Vaso para llevar de Nómada sostenido frente a un cañón, en una caminata" loading="lazy">
-        </button>
-        <button class="gallery-item g-tall reveal" data-full="images/nomada-storefront-sign.jpg">
-          <img src="images/nomada-storefront-sign.jpg" alt="Letrero de Nómada, café de especialidad, en la fachada de su local en Camargo" loading="lazy">
-        </button>
-        <button class="gallery-item reveal" data-full="images/nomada-barista-back.jpg">
-          <img src="images/nomada-barista-back.jpg" alt="Alguien de la familia Nómada preparando café en la barra" loading="lazy">
-        </button>
-        <button class="gallery-item reveal" data-full="images/nomada-laptop-drink.jpg">
-          <img src="images/nomada-laptop-drink.jpg" alt="Bebida fría de Nómada junto a una laptop, ambiente para trabajar" loading="lazy">
-        </button>
-        <button class="gallery-item reveal" data-full="images/nomada-mas-cafe-menos-drama.png">
-          <img src="images/nomada-mas-cafe-menos-drama.png" alt="Gráfico de Nómada: Más café, menos drama" loading="lazy">
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- VISIT -->
+  <!-- VISÍTANOS -->
   <section id="visitanos" class="visit">
     <div class="container visit-grid">
       <div class="visit-info reveal">
@@ -342,6 +262,9 @@
         <div class="visit-actions">
           <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=N%C3%B3mada+caf%C3%A9+de+especialidad+Allende+105+Camargo+Chihuahua" target="_blank" rel="noopener">Abrir en Google Maps</a>
           <div class="social-links">
+            <a href="https://wa.me/526481469847?text=Hola%20N%C3%B3mada%2C%20quiero%20preguntar%20algo" target="_blank" rel="noopener" aria-label="WhatsApp de Nómada Café">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 9.3c.3-1 1-1.2 1.4-1.2s.7 0 .9.5.7 1.7.8 1.8.1.3 0 .5-.2.3-.4.5-.4.4-.2.8c.2.4 1 1.6 2.1 2.2 1.1.7 1.3.6 1.6.5s.9-.9 1.1-1.2.5-.3.8-.2 1.8.8 2.1 1 .5.3.5.5-.1 1.2-.6 1.7-1.7 1.2-3 .7c-1.3-.5-3.5-1.8-4.7-3.7-.9-1.4-.9-2.6-.8-3Z" fill="currentColor"/></svg>
+            </a>
             <a href="https://www.facebook.com/nomadacafe/" target="_blank" rel="noopener" aria-label="Facebook de Nómada Café">
               <svg viewBox="0 0 24 24" fill="none"><path d="M15 8.5h2V5h-2c-2.2 0-4 1.8-4 4v2H9v3.5h2V21h3.5v-6.5H17l.5-3.5h-3V9c0-.5.4-.5.5-.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
             </a>
@@ -361,55 +284,24 @@
         </iframe>
       </div>
     </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section class="newsletter">
-    <div class="container newsletter-inner reveal">
-      <div>
-        <h2>Únete a la familia Nómada</h2>
-        <p>Entérate de eventos, cafés de temporada y noches de música. Sin spam, lo prometemos.</p>
-      </div>
-      <form id="newsletterForm" class="newsletter-form">
-        <input type="email" required placeholder="tu@correo.com" aria-label="Correo electrónico">
-        <button type="submit" class="btn btn-primary">Unirme</button>
-      </form>
-    </div>
+    <p class="visit-signature container reveal">— La familia Nómada</p>
   </section>
 
 </main>
 
-<footer class="footer">
+<footer class="site-footer">
   <div class="container footer-inner">
-    <div class="footer-brand">
-      <a class="footer-logo" href="#inicio">
-        <img src="images/nomada-logo-512.png" alt="Nómada, café de especialidad" width="88" height="88" loading="lazy">
-      </a>
-      <p>Negocio familiar · Café de especialidad · Ciudad Camargo, Chihuahua</p>
-    </div>
-
-    <nav class="footer-links">
-      <a href="#nosotros">Nosotros</a>
-      <a href="#menu">Menú</a>
-      <a href="#comunidad">Comunidad</a>
-      <a href="#galeria">Galería</a>
-      <a href="#visitanos">Visítanos</a>
-    </nav>
-
-    <div class="footer-contact">
-      <a href="tel:+526481469847">+52 648 146 9847</a>
-      <a href="https://www.facebook.com/nomadacafe/" target="_blank" rel="noopener">Facebook</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">
     <span>© <span id="year"></span> Nómada Café de Especialidad. Todos los derechos reservados.</span>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/nomadacafe/" target="_blank" rel="noopener" aria-label="Facebook de Nómada Café">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M15 8.5h2V5h-2c-2.2 0-4 1.8-4 4v2H9v3.5h2V21h3.5v-6.5H17l.5-3.5h-3V9c0-.5.4-.5.5-.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://www.instagram.com/ganasdenomadacafe/" target="_blank" rel="noopener" aria-label="Instagram de Nómada Café">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+      </a>
+    </div>
   </div>
 </footer>
-
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
-  <img id="lightboxImg" src="" alt="">
-</div>
 
 <a class="whatsapp-fab" href="https://wa.me/526481469847?text=Hola%20N%C3%B3mada%2C%20quiero%20preguntar%20algo" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 9.3c.3-1 1-1.2 1.4-1.2s.7 0 .9.5.7 1.7.8 1.8.1.3 0 .5-.2.3-.4.5-.4.4-.2.8c.2.4 1 1.6 2.1 2.2 1.1.7 1.3.6 1.6.5s.9-.9 1.1-1.2.5-.3.8-.2 1.8.8 2.1 1 .5.3.5.5-.1 1.2-.6 1.7-1.7 1.2-3 .7c-1.3-.5-3.5-1.8-4.7-3.7-.9-1.4-.9-2.6-.8-3Z" fill="currentColor"/></svg>
