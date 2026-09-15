@@ -186,7 +186,7 @@ p{ margin:0 0 1em; }
 .postcards-head h2{ font-size:clamp(1.7rem,3vw,2rem); margin:0; }
 .postcards-note{ font-size:.85rem; color:var(--coffee); }
 .postcards-note a{ color:var(--terracotta); text-decoration:underline; text-underline-offset:2px; }
-.postcards-track{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; padding:6px 24px 18px; margin-inline:-24px; }
+.postcards-track{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; padding-block:6px 18px; }
 .postcard{ margin:0; padding:10px; background:var(--cream); border:var(--border-dashed); }
 .postcard img{ width:100%; aspect-ratio:4/3; object-fit:cover; }
 .postcard figcaption{ padding:10px 2px 0; font-family:var(--font-hand); font-size:1.1rem; color:var(--coffee); }
