@@ -12,6 +12,26 @@
     "atribucion": "Un mensaje de la familia Nómada :)",
     "copy": "Nómada también es el foro de Camargo: noches de música en vivo, club de lectura, arte local en las paredes y mercados de emprendedores. Si tienes una idea para reunir gente, aquí hay una mesa para ti."
   },
+  "fotos": {
+    "sello": "images/nomada-sello.png",
+    "principal": "images/nomada-storefront-sign.jpg",
+    "quienes": "images/nomada-chemex-pourover.jpg",
+    "menu": "images/nomada-barista-back.jpg",
+    "postal1": "images/nomada-canon-hike.jpg",
+    "postal2": "images/nomada-laptop-drink.jpg",
+    "postal3": "images/nomada-chemex-postal.jpg",
+    "postal4": "images/nomada-cup-studio-bw.jpg"
+  },
+  "fotos": {
+    "sello": "images/nomada-sello.png",
+    "principal": "images/nomada-storefront-sign.jpg",
+    "quienes": "images/nomada-chemex-pourover.jpg",
+    "menu": "images/nomada-barista-back.jpg",
+    "postal1": "images/nomada-canon-hike.jpg",
+    "postal2": "images/nomada-laptop-drink.jpg",
+    "postal3": "images/nomada-chemex-postal.jpg",
+    "postal4": "images/nomada-cup-studio-bw.jpg"
+  },
   "contacto": {
     "direccion": "Allende 105, Col. Centro",
     "ciudad": "Ciudad Camargo, Chihuahua, C.P. 33700, México",

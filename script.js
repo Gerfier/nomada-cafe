@@ -16,6 +16,16 @@ const FALLBACK_SITE = {
     atribucion: 'Un mensaje de la familia Nómada',
     copy: 'Nómada también es el foro de Camargo: noches de música en vivo, club de lectura, arte local en las paredes y mercados de emprendedores. Si tienes una idea para reunir gente, aquí hay una mesa para ti.'
   },
+  fotos: {
+    sello: 'images/nomada-sello.png',
+    principal: 'images/nomada-storefront-sign.jpg',
+    quienes: 'images/nomada-chemex-pourover.jpg',
+    menu: 'images/nomada-barista-back.jpg',
+    postal1: 'images/nomada-canon-hike.jpg',
+    postal2: 'images/nomada-laptop-drink.jpg',
+    postal3: 'images/nomada-chemex-postal.jpg',
+    postal4: 'images/nomada-cup-studio-bw.jpg'
+  },
   contacto: {
     direccion: 'Allende 105, Col. Centro',
     ciudad: 'Ciudad Camargo, Chihuahua, C.P. 33700, México',
@@ -93,7 +103,31 @@ function applySiteContent(site) {
   document.querySelectorAll('[data-fb-link]').forEach(el => { el.href = site.contacto.facebook; });
   document.querySelectorAll('[data-ig-link]').forEach(el => { el.href = site.contacto.instagram; });
 
+  applyFotos(site.fotos);
+
   return h;
+}
+
+// Each key maps a photo "slot" (a specific spot on the page, described by
+// where it appears — not by what's currently in the picture, since the
+// family can swap in a different drink/scene later) to the <img id> that
+// shows it.
+function applyFotos(fotos) {
+  if (!fotos) return;
+  const map = {
+    sello: 'fotoSello',
+    principal: 'fotoPrincipal',
+    quienes: 'fotoQuienes',
+    menu: 'fotoMenu',
+    postal1: 'fotoPostal1',
+    postal2: 'fotoPostal2',
+    postal3: 'fotoPostal3',
+    postal4: 'fotoPostal4'
+  };
+  Object.keys(map).forEach(key => {
+    const el = document.getElementById(map[key]);
+    if (el && fotos[key]) el.src = fotos[key];
+  });
 }
 
 // "7:00 am" / "10:00 pm" -> decimal hour (0-24), for the open/closed check.

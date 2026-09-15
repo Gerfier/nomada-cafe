@@ -37,6 +37,13 @@
         { "nombre": "Bagel", "precio": "$55" },
         { "nombre": "Repostería artesanal", "precio": "$35" }
       ]
+    },
+    {
+      "nombre": "Para comer",
+      "items": [
+        { "nombre": "Sandwich del día (de ejemplo)", "precio": "$75" },
+        { "nombre": "Ensalada (de ejemplo)", "precio": "$70" }
+      ]
     }
   ]
 }

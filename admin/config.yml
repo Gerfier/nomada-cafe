@@ -30,6 +30,19 @@ collections:
               { label: "Atribución de la cita", name: "atribucion", widget: "string" },
               { label: "Párrafo de comunidad", name: "copy", widget: "text" }
             ] }
+          - label: "Fotos del sitio"
+            name: "fotos"
+            widget: "object"
+            hint: "Cada foto está etiquetada por dónde aparece en el sitio, no por lo que muestra ahorita — así no importa si algún día suben una bebida distinta a la que se ve hoy."
+            fields:
+              - { label: "Logotipo (el sello circular)", name: "sello", widget: "image", hint: "Aparece junto al nombre 'Nómada' arriba de todo. Usa una imagen cuadrada." }
+              - { label: "Foto principal (portada, la más grande, arriba de todo)", name: "principal", widget: "image" }
+              - { label: "Foto de 'Quiénes somos'", name: "quienes", widget: "image", hint: "Aparece junto al texto de la historia de la familia." }
+              - { label: "Foto de fondo — encabezado del Menú", name: "menu", widget: "image" }
+              - { label: "Postal 1 (Comunidad)", name: "postal1", widget: "image", hint: "Primera de las 4 fotos chiquitas en la sección de Comunidad." }
+              - { label: "Postal 2 (Comunidad)", name: "postal2", widget: "image" }
+              - { label: "Postal 3 (Comunidad)", name: "postal3", widget: "image" }
+              - { label: "Postal 4 (Comunidad)", name: "postal4", widget: "image" }
           - { label: "Contacto y horario", name: "contacto", widget: "object", fields: [
               { label: "Dirección (calle y número)", name: "direccion", widget: "string" },
               { label: "Ciudad, estado, C.P.", name: "ciudad", widget: "string" },
@@ -55,11 +68,13 @@ collections:
           - label: "Categorías"
             name: "categorias"
             widget: "list"
+            hint: "No solo bebidas — agrega las categorías que necesites (Comida, Postres, lo que vendan). Usa 'Add' para una categoría nueva."
             fields:
-              - { label: "Nombre de la categoría", name: "nombre", widget: "string" }
-              - label: "Bebidas / artículos"
+              - { label: "Nombre de la categoría", name: "nombre", widget: "string", hint: "Ej. Espresso, Para comer, Postres..." }
+              - label: "Productos"
                 name: "items"
                 widget: "list"
+                hint: "Bebidas, comida, o cualquier otra cosa — cada renglón es un producto con su precio."
                 fields:
                   - { label: "Nombre", name: "nombre", widget: "string" }
                   - { label: "Precio", name: "precio", widget: "string" }
