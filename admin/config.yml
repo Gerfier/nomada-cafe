@@ -1,0 +1,66 @@
+backend:
+  name: github
+  repo: Gerfier/nomada-cafe
+  branch: main
+  # This must point at the OAuth proxy deployed to Vercel (see /oauth-proxy).
+  # Replace with your deployed proxy's URL, e.g. https://nomada-cms-auth.vercel.app
+  base_url: https://REPLACE-WITH-YOUR-VERCEL-PROJECT.vercel.app
+  auth_endpoint: api/auth
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "sitio"
+    label: "Textos del sitio"
+    files:
+      - name: "site"
+        label: "Textos y contacto"
+        file: "content/site.json"
+        fields:
+          - { label: "Frase principal (hero)", name: "hero", widget: "object", fields: [
+              { label: "Frase (tagline)", name: "tagline", widget: "string" },
+              { label: "Párrafo debajo de la frase", name: "lede", widget: "text" }
+            ] }
+          - { label: "Quiénes somos", name: "quienes", widget: "object", fields: [
+              { label: "Primer párrafo", name: "p1", widget: "text" },
+              { label: "Segundo párrafo", name: "p2", widget: "text" }
+            ] }
+          - { label: "Comunidad", name: "comunidad", widget: "object", fields: [
+              { label: "Cita de cliente", name: "quote", widget: "text" },
+              { label: "Atribución de la cita", name: "atribucion", widget: "string" },
+              { label: "Párrafo de comunidad", name: "copy", widget: "text" }
+            ] }
+          - { label: "Contacto y horario", name: "contacto", widget: "object", fields: [
+              { label: "Dirección (calle y número)", name: "direccion", widget: "string" },
+              { label: "Ciudad, estado, C.P.", name: "ciudad", widget: "string" },
+              { label: "Teléfono (solo dígitos con +52)", name: "telefono", widget: "string", hint: "Formato: +526481469847 (sin espacios, para los enlaces de llamada y WhatsApp)" },
+              { label: "Teléfono (para mostrar)", name: "telefonoDisplay", widget: "string" },
+              { label: "Horario", name: "horario", widget: "object", fields: [
+                  { label: "Lun–Sáb apertura", name: "lunSabApertura", widget: "string" },
+                  { label: "Lun–Sáb cierre", name: "lunSabCierre", widget: "string" },
+                  { label: "Domingo apertura", name: "domApertura", widget: "string" },
+                  { label: "Domingo cierre", name: "domCierre", widget: "string" }
+                ] },
+              { label: "Facebook (URL completa)", name: "facebook", widget: "string" },
+              { label: "Instagram (URL completa)", name: "instagram", widget: "string" }
+            ] }
+
+  - name: "menu"
+    label: "Menú"
+    files:
+      - name: "menu"
+        label: "Categorías y precios"
+        file: "content/menu.json"
+        fields:
+          - label: "Categorías"
+            name: "categorias"
+            widget: "list"
+            fields:
+              - { label: "Nombre de la categoría", name: "nombre", widget: "string" }
+              - label: "Bebidas / artículos"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Nombre", name: "nombre", widget: "string" }
+                  - { label: "Precio", name: "precio", widget: "string" }

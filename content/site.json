@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "tagline": "Entras como desconocido, sales siendo familia.",
+    "lede": "Todo viajero, tarde o temprano, necesita un lugar al cual volver. Camargo es nuestro punto de partida — y esta barra, nuestro campamento base."
+  },
+  "quienes": {
+    "p1": "Nómada nació en nuestra propia mesa, entre pruebas de tueste y muchas tazas de más. Hoy seguimos siendo nosotros —la misma familia— quienes muelen el café, atienden las mesas y recuerdan cómo te gusta tu bebida.",
+    "p2": "Cuando entras por esa puerta no eres un cliente número tal. Eres alguien a quien nos gusta ver seguido — y con el tiempo, ojalá, un poco de familia también."
+  },
+  "comunidad": {
+    "quote": "Aquí no hay clientes de una sola vez. Si vienes una vez, la próxima ya sabemos cómo te gusta el café.",
+    "atribucion": "Un mensaje de la familia Nómada",
+    "copy": "Nómada también es el foro de Camargo: noches de música en vivo, club de lectura, arte local en las paredes y mercados de emprendedores. Si tienes una idea para reunir gente, aquí hay una mesa para ti."
+  },
+  "contacto": {
+    "direccion": "Allende 105, Col. Centro",
+    "ciudad": "Ciudad Camargo, Chihuahua, C.P. 33700, México",
+    "telefono": "+526481469847",
+    "telefonoDisplay": "+52 648 146 9847",
+    "horario": {
+      "lunSabApertura": "7:00 am",
+      "lunSabCierre": "10:00 pm",
+      "domApertura": "9:00 am",
+      "domCierre": "10:00 pm"
+    },
+    "facebook": "https://www.facebook.com/nomadacafe/",
+    "instagram": "https://www.instagram.com/ganasdenomadacafe/"
+  }
+}

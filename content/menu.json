@@ -1,0 +1,42 @@
+{
+  "categorias": [
+    {
+      "nombre": "Espresso",
+      "items": [
+        { "nombre": "Espresso", "precio": "$35" },
+        { "nombre": "Americano", "precio": "$40" },
+        { "nombre": "Cortado", "precio": "$45" },
+        { "nombre": "Cappuccino", "precio": "$50" },
+        { "nombre": "Latte", "precio": "$52" },
+        { "nombre": "Mocha", "precio": "$55" }
+      ]
+    },
+    {
+      "nombre": "Métodos",
+      "items": [
+        { "nombre": "V60", "precio": "$55" },
+        { "nombre": "Chemex", "precio": "$60" },
+        { "nombre": "Prensa francesa", "precio": "$55" },
+        { "nombre": "Cold brew", "precio": "$50" }
+      ]
+    },
+    {
+      "nombre": "Especiales",
+      "items": [
+        { "nombre": "Nómada latte (canela y piloncillo)", "precio": "$58" },
+        { "nombre": "Latte de temporada", "precio": "$58" },
+        { "nombre": "Chai latte", "precio": "$52" },
+        { "nombre": "Chocolate caliente", "precio": "$48" }
+      ]
+    },
+    {
+      "nombre": "Para acompañar",
+      "items": [
+        { "nombre": "Pan dulce local", "precio": "$25" },
+        { "nombre": "Waffles", "precio": "$65" },
+        { "nombre": "Bagel", "precio": "$55" },
+        { "nombre": "Repostería artesanal", "precio": "$35" }
+      ]
+    }
+  ]
+}

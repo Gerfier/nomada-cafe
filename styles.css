@@ -116,7 +116,7 @@ p{ margin:0 0 1em; }
 .hero-actions{ display:flex; gap:14px; margin-top:34px; flex-wrap:wrap; }
 
 .hero-photo-card{ padding:14px; background:var(--white); border:var(--border-dashed); box-shadow:0 16px 36px rgba(36,24,18,.14); rotate:2deg; }
-.hero-photo-card img{ width:100%; aspect-ratio:4/5; object-fit:cover; }
+.hero-photo-card img{ width:100%; height:min(520px,58vh); object-fit:cover; display:block; }
 .hero-photo-caption{ display:flex; justify-content:space-between; align-items:baseline; padding:12px 4px 2px; font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--coffee); }
 .hero-photo-caption .stars{ letter-spacing:2px; color:var(--terracotta); }
 
@@ -186,8 +186,8 @@ p{ margin:0 0 1em; }
 .postcards-head h2{ font-size:clamp(1.7rem,3vw,2rem); margin:0; }
 .postcards-note{ font-size:.85rem; color:var(--coffee); }
 .postcards-note a{ color:var(--terracotta); text-decoration:underline; text-underline-offset:2px; }
-.postcards-track{ display:flex; gap:18px; overflow-x:auto; padding:6px 24px 18px; margin-inline:-24px; }
-.postcard{ flex:none; width:270px; margin:0; padding:10px; background:var(--cream); border:var(--border-dashed); }
+.postcards-track{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; padding:6px 24px 18px; margin-inline:-24px; }
+.postcard{ margin:0; padding:10px; background:var(--cream); border:var(--border-dashed); }
 .postcard img{ width:100%; aspect-ratio:4/3; object-fit:cover; }
 .postcard figcaption{ padding:10px 2px 0; font-family:var(--font-hand); font-size:1.1rem; color:var(--coffee); }
 
@@ -257,6 +257,7 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   .menu-hero-photo{ display:none; }
   .menu-list{ grid-template-columns:1fr; gap:0; }
   .visit-map{ min-height:280px; }
+  .postcards-track{ grid-template-columns:repeat(2,1fr); }
 }
 
 @media (max-width: 760px){
@@ -274,7 +275,8 @@ a:focus-visible, button:focus-visible, input:focus-visible{
   .hero-actions{ flex-direction:column; align-items:flex-start; }
   .community-card{ padding:28px 24px; }
   .menu-hero-row{ padding-block:32px 24px; }
-  .postcards-track{ margin-inline:-16px; padding-inline:16px; }
+  .postcards-track{ display:flex; grid-template-columns:none; overflow-x:auto; margin-inline:-16px; padding-inline:16px; }
+  .postcard{ flex:none; width:220px; }
   .footer-inner{ flex-direction:column; align-items:flex-start; }
 
   body{ padding-bottom:66px; }
