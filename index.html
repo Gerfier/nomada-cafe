@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nómada Café de Especialidad — Cafetería Familiar en Camargo, Chihuahua</title>
 <meta name="description" content="Nómada, café de especialidad en Ciudad Camargo, Chihuahua. Entras como desconocido, sales siendo familia.">
-<link rel="canonical" href="https://gerfier.github.io/nomada-cafe/">
+<link rel="canonical" href="https://nomada-cafe.netlify.app/">
 <meta name="theme-color" content="#241812">
 
 <link rel="icon" href="images/nomada-logo-512.png" type="image/png">
@@ -20,12 +20,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nómada Café de Especialidad">
 <meta property="og:locale" content="es_MX">
-<meta property="og:url" content="https://gerfier.github.io/nomada-cafe/">
-<meta property="og:image" content="https://gerfier.github.io/nomada-cafe/images/nomada-chemex-pourover.jpg">
+<meta property="og:url" content="https://nomada-cafe.netlify.app/">
+<meta property="og:image" content="https://nomada-cafe.netlify.app/images/nomada-chemex-pourover.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nómada Café de Especialidad">
 <meta name="twitter:description" content="Entras como desconocido, sales siendo familia. Café de especialidad en Camargo, Chihuahua.">
-<meta name="twitter:image" content="https://gerfier.github.io/nomada-cafe/images/nomada-chemex-pourover.jpg">
+<meta name="twitter:image" content="https://nomada-cafe.netlify.app/images/nomada-chemex-pourover.jpg">
 
 <link rel="stylesheet" href="styles.css">
 
@@ -35,8 +35,8 @@
   "@type": "CafeOrCoffeeShop",
   "name": "Nómada Café de Especialidad",
   "description": "Entras como desconocido, sales siendo familia. Café de especialidad en Ciudad Camargo, Chihuahua.",
-  "image": "https://gerfier.github.io/nomada-cafe/images/nomada-chemex-pourover.jpg",
-  "url": "https://gerfier.github.io/nomada-cafe/",
+  "image": "https://nomada-cafe.netlify.app/images/nomada-chemex-pourover.jpg",
+  "url": "https://nomada-cafe.netlify.app/",
   "telephone": "+52-648-146-9847",
   "priceRange": "$",
   "servesCuisine": "Café de especialidad",
@@ -323,5 +323,21 @@
 </nav>
 
 <script src="script.js"></script>
+
+<!-- Necesario para que los links de invitación/recuperación de contraseña del
+     panel de admin (que Netlify Identity manda a la raíz del sitio) redirijan
+     de vuelta a /admin/ y completen el inicio de sesión ahí. -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>

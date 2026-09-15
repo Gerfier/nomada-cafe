@@ -41,15 +41,22 @@ All photos are now real — pulled from their Instagram ([@ganasdenomadacafe](ht
 ## SEO notes
 
 - A `CafeOrCoffeeShop` JSON-LD block in `<head>` gives Google structured data for name, address, phone, geo-coordinates and hours — this is what helps local search and Google Maps understand the business, separate from ranking on organic search text.
-- `robots.txt` + `sitemap.xml` are included; if you move off `gerfier.github.io`, update the canonical URL, `og:url`, and the URLs inside both files to match the new domain.
-- `site.webmanifest` has `start_url` set to `/nomada-cafe/` (the current GitHub Pages subpath). If you move to a custom domain at the root, change it to `/`.
+- `robots.txt` + `sitemap.xml` are included with a placeholder `https://nomada-cafe.netlify.app/` URL. Once the site is deployed (or a custom domain is attached), update the canonical URL, `og:url`/`og:image`/`twitter:image` in `index.html`, and the URLs inside both files to match the real one.
+- `site.webmanifest`'s `start_url` is `/` (Netlify serves the site from the root, unlike the old GitHub Pages subpath).
 - Claim/verify the **Google Business Profile** for the shop if you haven't — it's what actually drives the Maps pin, reviews, and "open now" badge in search results, and matters more for local SEO than the website itself.
 
-## Deploying to GitHub Pages
+## Deploying to Netlify
+
+The site used to live on GitHub Pages with a separate OAuth proxy on Vercel for the admin login. It's now all on Netlify instead, which also handles the admin panel's login for you — no separate proxy needed.
 
 1. Push to the `main` branch (already done if you're reading this from the repo).
-2. In the repo settings → **Pages**, set source to `Deploy from a branch`, branch `main`, folder `/ (root)`.
-3. The site will publish at `https://<your-username>.github.io/<repo-name>/`.
+2. In [app.netlify.com](https://app.netlify.com), **Add new site → Import an existing project**, connect it to `Gerfier/nomada-cafe`.
+3. Build settings: leave the **build command** empty and set the **publish directory** to `.` (this repo ships a `netlify.toml` that already sets this, so Netlify should pick it up automatically). Deploy.
+4. Netlify assigns a `*.netlify.app` URL — rename it under **Site settings → Site details → Change site name**, or attach the real domain later under **Domain management**. Once you know the final URL, update the placeholder `https://nomada-cafe.netlify.app/` references (see SEO notes above).
+5. Turn on the admin login: **Site settings → Identity → Enable Identity**. Under **Identity → Registration**, set it to **Invite only** so strangers can't sign themselves up.
+6. Turn on **Identity → Services → Git Gateway**. This is what lets Decap CMS commit changes to this repo on the family's behalf — they'll never need a GitHub account.
+7. Invite the family: **Identity tab → Invite users**, enter their email(s). They get an email to set a password.
+8. They log in at `https://<your-site>.netlify.app/admin/` with that email and password.
 
 ## Design notes
 

@@ -1,11 +1,10 @@
 backend:
-  name: github
-  repo: Gerfier/nomada-cafe
+  # Netlify Identity + Git Gateway: Netlify handles login and commits to this
+  # repo on the family's behalf, so they never need a GitHub account. Enable
+  # both in the Netlify dashboard (Site settings -> Identity, and Identity ->
+  # Services -> Git Gateway) after deploying — see README.md.
+  name: git-gateway
   branch: main
-  # This must point at the OAuth proxy deployed to Vercel (see /oauth-proxy).
-  # Replace with your deployed proxy's URL, e.g. https://nomada-cms-auth.vercel.app
-  base_url: https://REPLACE-WITH-YOUR-VERCEL-PROJECT.vercel.app
-  auth_endpoint: api/auth
 
 media_folder: "images"
 public_folder: "/images"
