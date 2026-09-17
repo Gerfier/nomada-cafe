@@ -30,6 +30,14 @@ collections:
               { label: "Atribución de la cita", name: "atribucion", widget: "string" },
               { label: "Párrafo de comunidad", name: "copy", widget: "text" }
             ] }
+          - label: "Frase grande (banner)"
+            name: "mantra"
+            widget: "object"
+            hint: "El letrero grande que aparece solo, entre los íconos de 'Por qué Nómada' y la cita de un cliente."
+            fields:
+              - { label: "Texto pequeño arriba", name: "eyebrow", widget: "string" }
+              - { label: "Frase grande", name: "linea", widget: "text" }
+              - { label: "Texto pequeño abajo", name: "nota", widget: "string" }
           - label: "Fotos del sitio"
             name: "fotos"
             widget: "object"

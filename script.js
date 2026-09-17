@@ -16,6 +16,11 @@ const FALLBACK_SITE = {
     atribucion: 'Un mensaje de la familia Nómada',
     copy: 'Nómada también es el foro de Camargo: noches de música en vivo, club de lectura, arte local en las paredes y mercados de emprendedores. Si tienes una idea para reunir gente, aquí hay una mesa para ti.'
   },
+  mantra: {
+    eyebrow: 'El café que te mueve',
+    linea: 'Café tan bueno que tus sueños saben a segunda taza',
+    nota: 'Advertencia: puede causar adicción'
+  },
   fotos: {
     sello: 'images/nomada-sello.png',
     principal: 'images/nomada-storefront-sign.jpg',
@@ -82,6 +87,12 @@ function applySiteContent(site) {
   setText('testimonialQuote', '“' + site.comunidad.quote + '”');
   setText('testimonialAttribution', site.comunidad.atribucion);
   setText('communityCopy', site.comunidad.copy);
+
+  if (site.mantra) {
+    setText('mantraEyebrow', site.mantra.eyebrow);
+    setText('mantraLinea', site.mantra.linea);
+    setText('mantraNota', site.mantra.nota);
+  }
 
   setText('visitDireccion', site.contacto.direccion);
   setText('visitCiudad', site.contacto.ciudad);

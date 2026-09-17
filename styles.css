@@ -143,6 +143,20 @@ p{ margin:0 0 1em; }
 }
 .stamp p{ margin:0; font-size:.84rem; line-height:1.55; color:var(--coffee); }
 
+/* ---------- Mantra banner ---------- */
+.mantra{ background:var(--espresso); padding-block:56px; }
+.mantra-inner{ text-align:center; }
+.mantra .eyebrow{ color:var(--gold); }
+.mantra-line{
+  font-family:var(--font-condensed); font-weight:400; text-transform:uppercase;
+  font-size:clamp(1.7rem,4.2vw,3rem); line-height:1.2; letter-spacing:-.01em;
+  color:var(--cream); max-width:840px; margin-inline:auto;
+}
+.mantra-note{
+  margin:16px 0 0; font-size:.78rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--cream-soft); opacity:.65;
+}
+
 /* ---------- Community callout card ---------- */
 .community-callout{ padding-block:44px 56px; }
 .community-card{ background:var(--espresso); border-radius:var(--radius); padding:36px 40px; display:flex; flex-direction:column; gap:16px; }
