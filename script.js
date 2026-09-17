@@ -20,10 +20,10 @@ const FALLBACK_SITE = {
     sello: 'images/nomada-sello.png',
     principal: 'images/nomada-storefront-sign.jpg',
     quienes: 'images/nomada-chemex-pourover.jpg',
-    menu: 'images/nomada-barista-back.jpg',
+    menu: 'images/nomada-espresso-pull.jpg',
     postal1: 'images/nomada-canon-hike.jpg',
     postal2: 'images/nomada-laptop-drink.jpg',
-    postal3: 'images/nomada-chemex-postal.jpg',
+    postal3: 'images/nomada-bigben-postal.jpg',
     postal4: 'images/nomada-cup-studio-bw.jpg'
   },
   contacto: {
