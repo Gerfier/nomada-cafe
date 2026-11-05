@@ -52,6 +52,10 @@ On Netlify, `build.js` serves photos through the [Netlify Image CDN](https://doc
 - A `CafeOrCoffeeShop` JSON-LD block in `<head>` (generated from `content/site.json`) gives Google structured data for name, address, phone and hours. That helps local search and Google Maps understand the business.
 - Claim/verify the **Google Business Profile** for the shop if you haven't. It drives the Maps pin, reviews and the "open now" badge in search results, and matters more for local SEO than the website itself.
 
+## Preview on GitHub Pages
+
+`.github/workflows/pages.yml` runs `node build.js` on every push to `main` and publishes `dist/` to https://gerfier.github.io/nomada-cafe/ (one-time setup: **Settings → Pages → Source: GitHub Actions**). Asset paths are relative, so the same build works at a domain root or under `/nomada-cafe/`. The /admin panel needs Netlify Identity, so it only works on the Netlify deploy.
+
 ## Deploying to Netlify
 
 The site used to live on GitHub Pages with a separate OAuth proxy on Vercel for the admin login. It's now all on Netlify instead, which also handles the admin panel's login for you — no separate proxy needed.
