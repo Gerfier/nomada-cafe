@@ -3,57 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Template: `node build.js` fills in the double-brace placeholders from content/*.json and writes dist/index.html. -->
 <title>Nómada Café de Especialidad — Cafetería Familiar en Camargo, Chihuahua</title>
-<meta name="description" content="Nómada, café de especialidad en Ciudad Camargo, Chihuahua. Entras como desconocido, sales siendo familia.">
-<link rel="canonical" href="https://nomada-cafe.netlify.app/">
+<meta name="description" content="Nómada, café de especialidad en {{contacto.localidad}}, {{contacto.estado}}. {{hero.tagline}}">
+<link rel="canonical" href="{{pageUrl}}">
 <meta name="theme-color" content="#241812">
+<script>document.documentElement.classList.add('js');</script>
 
-<link rel="icon" href="images/nomada-logo-512.png" type="image/png">
-<link rel="apple-touch-icon" href="images/favicon-180.png">
-<link rel="manifest" href="site.webmanifest">
+<link rel="icon" href="/images/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/images/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&family=Anton&display=swap" rel="stylesheet">
-<link rel="preload" as="image" fetchpriority="high" href="images/nomada-storefront-sign.jpg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Work+Sans:wght@400;600&family=Caveat:wght@500&family=Anton&display=swap" rel="stylesheet">
+{{{heroPreload}}}
 
 <meta property="og:title" content="Nómada Café de Especialidad">
-<meta property="og:description" content="Entras como desconocido, sales siendo familia. Café de especialidad en Ciudad Camargo, Chihuahua.">
+<meta property="og:description" content="{{hero.tagline}} Café de especialidad en {{contacto.localidad}}, {{contacto.estado}}.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nómada Café de Especialidad">
 <meta property="og:locale" content="es_MX">
-<meta property="og:url" content="https://nomada-cafe.netlify.app/">
-<meta property="og:image" content="https://nomada-cafe.netlify.app/images/nomada-chemex-pourover.jpg">
+<meta property="og:url" content="{{pageUrl}}">
+<meta property="og:image" content="{{ogImage}}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nómada Café de Especialidad">
-<meta name="twitter:description" content="Entras como desconocido, sales siendo familia. Café de especialidad en Camargo, Chihuahua.">
-<meta name="twitter:image" content="https://nomada-cafe.netlify.app/images/nomada-chemex-pourover.jpg">
+<meta name="twitter:description" content="{{hero.tagline}} Café de especialidad en {{contacto.localidad}}, {{contacto.estado}}.">
+<meta name="twitter:image" content="{{ogImage}}">
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="/styles.css">
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "CafeOrCoffeeShop",
-  "name": "Nómada Café de Especialidad",
-  "description": "Entras como desconocido, sales siendo familia. Café de especialidad en Ciudad Camargo, Chihuahua.",
-  "image": "https://nomada-cafe.netlify.app/images/nomada-chemex-pourover.jpg",
-  "url": "https://nomada-cafe.netlify.app/",
-  "telephone": "+52-648-146-9847",
-  "priceRange": "$",
-  "servesCuisine": "Café de especialidad",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Allende 105, Col. Centro",
-    "addressLocality": "Ciudad Camargo",
-    "addressRegion": "Chihuahua",
-    "postalCode": "33700",
-    "addressCountry": "MX"
-  },
-  "sameAs": ["https://www.facebook.com/nomadacafe/", "https://www.instagram.com/ganasdenomadacafe/"],
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "07:00", "closes": "22:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "22:00" }
-  ]
-}
+{{{jsonLd}}}
 </script>
 </head>
 <body>
@@ -66,23 +46,23 @@
   <div class="header-inner container">
     <a class="brand-word" href="#inicio">Nómada</a>
 
-    <nav class="header-nav" id="navLinks">
+    <nav class="header-nav" id="navLinks" aria-label="Principal">
       <a href="#nosotros">Nosotros</a>
       <a href="#menu">Menú</a>
       <a href="#comunidad">Comunidad</a>
       <a href="#visitanos">Visítanos</a>
     </nav>
 
-    <span class="status-chip" id="statusChip">
-      <span class="status-dot" id="statusDot" aria-hidden="true"></span>
-      <span id="statusText">Abierto ahora</span>
-    </span>
-
-    <a class="icon-btn whatsapp-btn" href="https://wa.me/526481469847?text=Hola%20N%C3%B3mada%2C%20quiero%20preguntar%20algo" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" data-wa-link>
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 9.3c.3-1 1-1.2 1.4-1.2s.7 0 .9.5.7 1.7.8 1.8.1.3 0 .5-.2.3-.4.5-.4.4-.2.8c.2.4 1 1.6 2.1 2.2 1.1.7 1.3.6 1.6.5s.9-.9 1.1-1.2.5-.3.8-.2 1.8.8 2.1 1 .5.3.5.5-.1 1.2-.6 1.7-1.7 1.2-3 .7c-1.3-.5-3.5-1.8-4.7-3.7-.9-1.4-.9-2.6-.8-3Z" fill="currentColor"/></svg>
+    <a class="status-chip is-pending" id="statusChip" href="#visitanos" data-hours="{{hoursJson}}">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span id="statusText">Horario</span>
     </a>
 
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+    <a class="icon-btn whatsapp-btn" href="{{waUrl}}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+      {{{icons.whatsapp}}}
+    </a>
+
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -93,21 +73,20 @@
   <!-- HERO (passport) -->
   <section id="inicio" class="hero-passport container">
     <div class="hero-left">
-      <img id="fotoSello" class="hero-seal reveal" src="images/nomada-sello.png" alt="Sello de Nómada Café de Especialidad" width="86" height="86" loading="eager">
-      <h1 class="hero-word reveal">Nómada</h1>
-      <p class="hero-subhead reveal">Café de especialidad · Camargo, Chihuahua</p>
-      <p class="hero-tagline reveal" id="heroTagline">Entras como desconocido, sales siendo familia.</p>
-      <p class="hero-lede reveal" id="heroLede">Todo viajero, tarde o temprano, necesita un lugar al cual volver. Camargo es nuestro punto de partida — y esta barra, nuestro campamento base.</p>
-      <div class="hero-actions reveal">
+      <img class="hero-seal" {{{img.sello}}} loading="eager">
+      <h1 class="hero-word">Nómada</h1>
+      <p class="hero-subhead">Café de especialidad · {{contacto.localidadCorta}}, {{contacto.estado}}</p>
+      <p class="hero-tagline">{{hero.tagline}}</p>
+      <p class="hero-lede">{{hero.lede}}</p>
+      <div class="hero-actions">
         <a href="#menu" class="btn btn-primary">Ver el menú</a>
-        <a href="#visitanos" class="btn btn-dashed">Allende 105, Centro →</a>
+        <a href="#visitanos" class="btn btn-dashed">{{contacto.direccionCorta}} →</a>
       </div>
     </div>
-    <div class="hero-photo-card reveal">
-      <img id="fotoPrincipal" src="images/nomada-storefront-sign.jpg" alt="Fachada de Nómada, café de especialidad, en su local en Camargo" width="900" height="1125" loading="eager" fetchpriority="high">
+    <div class="hero-photo-card">
+      <img {{{img.principal}}} loading="eager" fetchpriority="high">
       <div class="hero-photo-caption">
-        <span>Allende 105 · Col. Centro</span>
-        <span class="stars">★★★★★</span>
+        <span>{{contacto.direccion}}</span>
       </div>
     </div>
   </section>
@@ -116,23 +95,22 @@
   <section id="nosotros" class="quienes">
     <div class="container quienes-grid">
       <div class="quienes-media reveal">
-        <img id="fotoQuienes" src="images/nomada-chemex-pourover.jpg" alt="Alguien de la familia Nómada preparando café" loading="lazy">
+        <img {{{img.quienes}}} loading="lazy">
         <div class="quienes-tag">Negocio familiar<br>100% de Camargo</div>
       </div>
       <div class="quienes-text">
         <p class="eyebrow reveal">Quiénes somos</p>
         <h2 class="reveal">Una familia detrás de cada taza</h2>
-        <p class="reveal" id="quienesP1">Nómada nació en nuestra propia mesa, entre pruebas de tueste y muchas tazas de más. Hoy seguimos siendo nosotros —la misma familia— quienes muelen el café, atienden las mesas y recuerdan cómo te gusta tu bebida.</p>
-        <p class="reveal" id="quienesP2">Cuando entras por esa puerta no eres un cliente número tal. Eres alguien a quien nos gusta ver seguido — y con el tiempo, ojalá, un poco de familia también.</p>
+        <p class="reveal">{{quienes.p1}}</p>
+        <p class="reveal">{{quienes.p2}}</p>
       </div>
     </div>
   </section>
 
   <!-- POR QUÉ NÓMADA -->
-  <section class="stamps">
+  <section class="stamps" aria-labelledby="porQueTitulo">
     <div class="container">
-      <h2 class="sr-only">Por qué Nómada</h2>
-      <p class="eyebrow center reveal">Por qué Nómada</p>
+      <h2 class="eyebrow center reveal" id="porQueTitulo">Por qué Nómada</h2>
       <div class="stamps-grid">
         <div class="stamp reveal">
           <div class="stamp-badge">Café de especialidad</div>
@@ -157,9 +135,9 @@
   <!-- MANTRA -->
   <section class="mantra">
     <div class="container mantra-inner reveal">
-      <p class="eyebrow" id="mantraEyebrow">El café que te mueve</p>
-      <h2 class="mantra-line" id="mantraLinea">Café tan bueno que tus sueños saben a segunda taza</h2>
-      <p class="mantra-note" id="mantraNota">Advertencia: puede causar adicción</p>
+      <p class="eyebrow">{{mantra.eyebrow}}</p>
+      <h2 class="mantra-line">{{mantra.linea}}</h2>
+      <p class="mantra-note">{{mantra.nota}}</p>
     </div>
   </section>
 
@@ -168,42 +146,31 @@
     <div class="container">
       <div class="community-card reveal">
         <h2 class="sr-only">Comunidad</h2>
-        <p class="testimonial-quote" id="testimonialQuote">&ldquo;Aquí no hay clientes de una sola vez. Si vienes una vez, la próxima ya sabemos cómo te gusta el café.&rdquo;</p>
-        <div class="testimonial-foot">
-          <span class="stars">★★★★★</span>
-          <span id="testimonialAttribution">Un mensaje de la familia Nómada</span>
-        </div>
-        <p class="community-copy" id="communityCopy">Nómada también es el foro de Camargo: noches de música en vivo, club de lectura, arte local en las paredes y mercados de emprendedores. Si tienes una idea para reunir gente, aquí hay una mesa para ti.</p>
+        <blockquote class="testimonial-quote">&ldquo;{{comunidad.quote}}&rdquo;</blockquote>
+        <p class="testimonial-foot">{{comunidad.atribucion}}</p>
+        <p class="community-copy">{{comunidad.copy}}</p>
       </div>
     </div>
   </section>
 
   <!-- MENU -->
-  <section id="menu" class="menu-dark">
+  <section id="menu" class="menu-dark" aria-labelledby="menuTitulo">
     <div class="menu-hero-row container">
-      <h2 class="menu-hero-title reveal">Más café, menos<br><span>drama</span></h2>
-      <img id="fotoMenu" class="menu-hero-photo reveal" src="images/nomada-espresso-pull.jpg" alt="Espresso cayendo en la taza en la barra de Nómada" loading="lazy">
+      <p class="menu-hero-title reveal">Más café, menos<br><span>drama</span></p>
+      <img class="menu-hero-photo reveal" {{{img.menu}}} loading="lazy">
     </div>
 
     <div class="menu-heading-row container reveal">
-      <h2>Menú</h2>
-      <span class="menu-ref-note">Precios de referencia · pregúntanos por el menú del día</span>
+      <h2 id="menuTitulo">Menú</h2>
+      <span class="menu-ref-note">Precios de referencia · <a href="{{waUrl}}" target="_blank" rel="noopener">pregúntanos por el menú del día</a></span>
     </div>
 
     <div class="menu-tabs container reveal" id="menuTabs" role="tablist" aria-label="Categorías del menú">
-      <button class="menu-tab is-active" data-tab="Espresso" role="tab" aria-selected="true">Espresso</button>
-      <button class="menu-tab" data-tab="Métodos" role="tab" aria-selected="false">Métodos</button>
-      <button class="menu-tab" data-tab="Especiales" role="tab" aria-selected="false">Especiales</button>
-      <button class="menu-tab" data-tab="Para acompañar" role="tab" aria-selected="false">Para acompañar</button>
+{{{menuTabs}}}
     </div>
 
-    <div class="menu-list container reveal" id="menuItems" aria-live="polite">
-      <div class="menu-item"><span class="menu-item-name">Espresso</span><i class="menu-item-leader"></i><b class="menu-item-price">$35</b></div>
-      <div class="menu-item"><span class="menu-item-name">Americano</span><i class="menu-item-leader"></i><b class="menu-item-price">$40</b></div>
-      <div class="menu-item"><span class="menu-item-name">Cortado</span><i class="menu-item-leader"></i><b class="menu-item-price">$45</b></div>
-      <div class="menu-item"><span class="menu-item-name">Cappuccino</span><i class="menu-item-leader"></i><b class="menu-item-price">$50</b></div>
-      <div class="menu-item"><span class="menu-item-name">Latte</span><i class="menu-item-leader"></i><b class="menu-item-price">$52</b></div>
-      <div class="menu-item"><span class="menu-item-name">Mocha</span><i class="menu-item-leader"></i><b class="menu-item-price">$55</b></div>
+    <div class="container reveal">
+{{{menuPanels}}}
     </div>
   </section>
 
@@ -214,24 +181,24 @@
         <p class="eyebrow">Comunidad</p>
         <h2>Postales de la barra</h2>
       </div>
-      <span class="postcards-note">Ejemplos de lo que subimos a <a href="https://www.instagram.com/ganasdenomadacafe/" target="_blank" rel="noopener">@ganasdenomadacafe</a> →</span>
+      <span class="postcards-note">Ejemplos de lo que subimos a <a href="{{contacto.instagram}}" target="_blank" rel="noopener">@{{instagramHandle}}</a> →</span>
     </div>
     <div class="container postcards-track reveal">
       <figure class="postcard">
-        <img id="fotoPostal1" src="images/nomada-canon-hike.jpg" alt="Postal de Nómada — 1" loading="lazy">
-        <figcaption>Para llevar, rumbo al cañón</figcaption>
+        <img {{{img.postal1}}} loading="lazy">
+        <figcaption>{{fotos.postal1.pie}}</figcaption>
       </figure>
       <figure class="postcard">
-        <img id="fotoPostal2" src="images/nomada-laptop-drink.jpg" alt="Postal de Nómada — 2" loading="lazy">
-        <figcaption>Mesa de trabajo, tarde larga</figcaption>
+        <img {{{img.postal2}}} loading="lazy">
+        <figcaption>{{fotos.postal2.pie}}</figcaption>
       </figure>
       <figure class="postcard">
-        <img id="fotoPostal3" src="images/nomada-bigben-postal.jpg" alt="Termo de Nómada frente al Big Ben, en Londres" loading="lazy">
-        <figcaption>De gira por Londres</figcaption>
+        <img {{{img.postal3}}} loading="lazy">
+        <figcaption>{{fotos.postal3.pie}}</figcaption>
       </figure>
       <figure class="postcard">
-        <img id="fotoPostal4" src="images/nomada-cup-studio-bw.jpg" alt="Postal de Nómada — 4" loading="lazy">
-        <figcaption>El vaso de siempre</figcaption>
+        <img {{{img.postal4}}} loading="lazy">
+        <figcaption>{{fotos.postal4.pie}}</figcaption>
       </figure>
     </div>
   </section>
@@ -244,42 +211,36 @@
         <h2>Te esperamos con la taza lista</h2>
 
         <div class="visit-row">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+          {{{icons.pin}}}
           <div>
-            <strong id="visitDireccion">Allende 105, Col. Centro</strong>
-            <span id="visitCiudad">Ciudad Camargo, Chihuahua, C.P. 33700, México</span>
+            <strong>{{contacto.direccion}}</strong>
+            <span>{{ciudadDisplay}}</span>
           </div>
         </div>
 
         <div class="visit-row">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1.5a11 11 0 0 0 5.5 5.5L15 13l5 2v2c0 1-1 2-2 2C10.6 19 4 12.4 4 5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          {{{icons.phone}}}
           <div>
-            <strong><a href="tel:+526481469847" data-tel-link data-tel-display>+52 648 146 9847</a></strong>
-            <span>Llámanos o <a href="https://wa.me/526481469847?text=Hola%20N%C3%B3mada%2C%20quiero%20preguntar%20algo" target="_blank" rel="noopener" data-wa-link>escríbenos por WhatsApp</a></span>
+            <strong><a href="{{telUrl}}">{{contacto.telefonoDisplay}}</a></strong>
+            <span>Llámanos o <a href="{{waUrl}}" target="_blank" rel="noopener">escríbenos por WhatsApp</a></span>
           </div>
         </div>
 
         <div class="visit-row">
-          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          {{{icons.clock}}}
           <div class="hours-table">
             <strong>Horario</strong>
-            <span><em>Lun – Sáb</em> <span id="horarioLunSab">7:00 am – 10:00 pm</span></span>
-            <span><em>Domingo</em> <span id="horarioDom">9:00 am – 10:00 pm</span></span>
+            <span><em>Lun – Sáb</em> {{horarioLunSab}}</span>
+            <span><em>Domingo</em> {{horarioDom}}</span>
           </div>
         </div>
 
         <div class="visit-actions">
-          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=N%C3%B3mada+caf%C3%A9+de+especialidad+Allende+105+Camargo+Chihuahua" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          <a class="btn btn-primary" href="{{mapsUrl}}" target="_blank" rel="noopener">Abrir en Google Maps</a>
           <div class="social-links">
-            <a href="https://wa.me/526481469847?text=Hola%20N%C3%B3mada%2C%20quiero%20preguntar%20algo" target="_blank" rel="noopener" aria-label="WhatsApp de Nómada Café" data-wa-link>
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 9.3c.3-1 1-1.2 1.4-1.2s.7 0 .9.5.7 1.7.8 1.8.1.3 0 .5-.2.3-.4.5-.4.4-.2.8c.2.4 1 1.6 2.1 2.2 1.1.7 1.3.6 1.6.5s.9-.9 1.1-1.2.5-.3.8-.2 1.8.8 2.1 1 .5.3.5.5-.1 1.2-.6 1.7-1.7 1.2-3 .7c-1.3-.5-3.5-1.8-4.7-3.7-.9-1.4-.9-2.6-.8-3Z" fill="currentColor"/></svg>
-            </a>
-            <a href="https://www.facebook.com/nomadacafe/" target="_blank" rel="noopener" aria-label="Facebook de Nómada Café" data-fb-link>
-              <svg viewBox="0 0 24 24" fill="none"><path d="M15 8.5h2V5h-2c-2.2 0-4 1.8-4 4v2H9v3.5h2V21h3.5v-6.5H17l.5-3.5h-3V9c0-.5.4-.5.5-.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
-            </a>
-            <a href="https://www.instagram.com/ganasdenomadacafe/" target="_blank" rel="noopener" aria-label="Instagram de Nómada Café" data-ig-link>
-              <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
-            </a>
+            <a href="{{waUrl}}" target="_blank" rel="noopener" aria-label="WhatsApp de Nómada Café">{{{icons.whatsapp}}}</a>
+            <a href="{{contacto.facebook}}" target="_blank" rel="noopener" aria-label="Facebook de Nómada Café">{{{icons.facebook}}}</a>
+            <a href="{{contacto.instagram}}" target="_blank" rel="noopener" aria-label="Instagram de Nómada Café">{{{icons.instagram}}}</a>
           </div>
         </div>
       </div>
@@ -287,7 +248,7 @@
       <div class="visit-map reveal">
         <iframe
           title="Mapa de Nómada Café de Especialidad"
-          src="https://www.google.com/maps?q=N%C3%B3mada%20caf%C3%A9%20de%20especialidad%2C%20Allende%20105%2C%20Camargo%2C%20Chihuahua&output=embed"
+          src="{{mapsEmbedUrl}}"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
@@ -300,52 +261,46 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <span>© <span id="year"></span> Nómada Café de Especialidad. Todos los derechos reservados.</span>
+    <span>© <span id="year">{{year}}</span> Nómada Café de Especialidad. Todos los derechos reservados.</span>
     <div class="footer-social">
-      <a href="https://www.facebook.com/nomadacafe/" target="_blank" rel="noopener" aria-label="Facebook de Nómada Café" data-fb-link>
-        <svg viewBox="0 0 24 24" fill="none"><path d="M15 8.5h2V5h-2c-2.2 0-4 1.8-4 4v2H9v3.5h2V21h3.5v-6.5H17l.5-3.5h-3V9c0-.5.4-.5.5-.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="https://www.instagram.com/ganasdenomadacafe/" target="_blank" rel="noopener" aria-label="Instagram de Nómada Café" data-ig-link>
-        <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
-      </a>
+      <a href="{{contacto.facebook}}" target="_blank" rel="noopener" aria-label="Facebook de Nómada Café">{{{icons.facebook}}}</a>
+      <a href="{{contacto.instagram}}" target="_blank" rel="noopener" aria-label="Instagram de Nómada Café">{{{icons.instagram}}}</a>
     </div>
   </div>
 </footer>
 
-<a class="whatsapp-fab" href="https://wa.me/526481469847?text=Hola%20N%C3%B3mada%2C%20quiero%20preguntar%20algo" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" data-wa-link>
-  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8.5 9.3c.3-1 1-1.2 1.4-1.2s.7 0 .9.5.7 1.7.8 1.8.1.3 0 .5-.2.3-.4.5-.4.4-.2.8c.2.4 1 1.6 2.1 2.2 1.1.7 1.3.6 1.6.5s.9-.9 1.1-1.2.5-.3.8-.2 1.8.8 2.1 1 .5.3.5.5-.1 1.2-.6 1.7-1.7 1.2-3 .7c-1.3-.5-3.5-1.8-4.7-3.7-.9-1.4-.9-2.6-.8-3Z" fill="currentColor"/></svg>
+<a class="whatsapp-fab" href="{{waUrl}}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  {{{icons.whatsapp}}}
 </a>
 
 <nav class="mobile-actionbar" aria-label="Acciones rápidas">
-  <a href="tel:+526481469847" data-tel-link>
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5c0-1 1-2 2-2h2l2 5-2 1.5a11 11 0 0 0 5.5 5.5L15 13l5 2v2c0 1-1 2-2 2C10.6 19 4 12.4 4 5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  <a href="{{telUrl}}">
+    {{{icons.phone}}}
     <span>Llamar</span>
   </a>
-  <a href="https://wa.me/526481469847?text=Hola%20N%C3%B3mada%2C%20quiero%20preguntar%20algo" target="_blank" rel="noopener" data-wa-link>
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  <a href="{{waUrl}}" target="_blank" rel="noopener">
+    {{{icons.whatsappOutline}}}
     <span>WhatsApp</span>
   </a>
-  <a href="https://www.google.com/maps/search/?api=1&query=N%C3%B3mada+caf%C3%A9+de+especialidad+Allende+105+Camargo+Chihuahua" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+  <a href="{{mapsUrl}}" target="_blank" rel="noopener">
+    {{{icons.pin}}}
     <span>Cómo llegar</span>
   </a>
 </nav>
 
-<script src="script.js"></script>
+<script src="/script.js"></script>
 
-<!-- Necesario para que los links de invitación/recuperación de contraseña del
-     panel de admin (que Netlify Identity manda a la raíz del sitio) redirijan
-     de vuelta a /admin/ y completen el inicio de sesión ahí. -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<!-- Netlify Identity sends admin invite / password-reset links to the site
+     root. Only in that case, load the widget so the family can finish
+     signing up, then send them to /admin/. -->
 <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", (user) => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
+  if (/(?:invite|recovery|confirmation|email_change)_token=/.test(location.hash)) {
+    var identityScript = document.createElement('script');
+    identityScript.src = 'https://identity.netlify.com/v1/netlify-identity-widget.js';
+    identityScript.onload = function () {
+      window.netlifyIdentity.on('login', function () { location.href = '/admin/'; });
+    };
+    document.body.appendChild(identityScript);
   }
 </script>
 </body>
