@@ -26,14 +26,14 @@ collections:
               { label: "Segundo párrafo", name: "p2", widget: "text" }
             ] }
           - { label: "Comunidad", name: "comunidad", widget: "object", fields: [
-              { label: "Cita de cliente", name: "quote", widget: "text" },
+              { label: "Cita", name: "quote", widget: "text" },
               { label: "Atribución de la cita", name: "atribucion", widget: "string" },
               { label: "Párrafo de comunidad", name: "copy", widget: "text" }
             ] }
           - label: "Frase grande (banner)"
             name: "mantra"
             widget: "object"
-            hint: "El letrero grande que aparece solo, entre los íconos de 'Por qué Nómada' y la cita de un cliente."
+            hint: "El letrero grande que aparece solo, entre los íconos de 'Por qué Nómada' y la cita."
             fields:
               - { label: "Texto pequeño arriba", name: "eyebrow", widget: "string" }
               - { label: "Frase grande", name: "linea", widget: "text" }
@@ -41,30 +41,50 @@ collections:
           - label: "Fotos del sitio"
             name: "fotos"
             widget: "object"
-            hint: "Cada foto está etiquetada por dónde aparece en el sitio, no por lo que muestra ahorita — así no importa si algún día suben una bebida distinta a la que se ve hoy."
+            hint: "Cada foto está etiquetada por dónde aparece en el sitio, no por lo que muestra ahorita. Si cambias una foto, actualiza también su descripción."
             fields:
-              - { label: "Logotipo (el sello circular)", name: "sello", widget: "image", hint: "Aparece junto al nombre 'Nómada' arriba de todo. Usa una imagen cuadrada." }
-              - { label: "Foto principal (portada, la más grande, arriba de todo)", name: "principal", widget: "image" }
-              - { label: "Foto de 'Quiénes somos'", name: "quienes", widget: "image", hint: "Aparece junto al texto de la historia de la familia." }
-              - { label: "Foto de fondo — encabezado del Menú", name: "menu", widget: "image" }
-              - { label: "Postal 1 (Comunidad)", name: "postal1", widget: "image", hint: "Primera de las 4 fotos chiquitas en la sección de Comunidad." }
-              - { label: "Postal 2 (Comunidad)", name: "postal2", widget: "image" }
-              - { label: "Postal 3 (Comunidad)", name: "postal3", widget: "image" }
-              - { label: "Postal 4 (Comunidad)", name: "postal4", widget: "image" }
-          - { label: "Contacto y horario", name: "contacto", widget: "object", fields: [
-              { label: "Dirección (calle y número)", name: "direccion", widget: "string" },
-              { label: "Ciudad, estado, C.P.", name: "ciudad", widget: "string" },
-              { label: "Teléfono (solo dígitos con +52)", name: "telefono", widget: "string", hint: "Formato: +526481469847 (sin espacios, para los enlaces de llamada y WhatsApp)" },
-              { label: "Teléfono (para mostrar)", name: "telefonoDisplay", widget: "string" },
-              { label: "Horario", name: "horario", widget: "object", fields: [
-                  { label: "Lun–Sáb apertura", name: "lunSabApertura", widget: "string" },
-                  { label: "Lun–Sáb cierre", name: "lunSabCierre", widget: "string" },
-                  { label: "Domingo apertura", name: "domApertura", widget: "string" },
-                  { label: "Domingo cierre", name: "domCierre", widget: "string" }
-                ] },
-              { label: "Facebook (URL completa)", name: "facebook", widget: "string" },
-              { label: "Instagram (URL completa)", name: "instagram", widget: "string" }
-            ] }
+              - label: "Logotipo (el sello circular)"
+                name: "sello"
+                widget: "object"
+                hint: "Aparece arriba del nombre 'Nómada', al inicio de la página. Usa una imagen cuadrada."
+                fields: &foto
+                  - { label: "Imagen", name: "imagen", widget: "image" }
+                  - { label: "Descripción de la foto", name: "alt", widget: "string", hint: "Qué se ve en la foto, en una frase. La leen los lectores de pantalla y Google." }
+              - { label: "Foto principal (portada, la más grande, arriba de todo)", name: "principal", widget: "object", fields: *foto }
+              - { label: "Foto de 'Quiénes somos'", name: "quienes", widget: "object", hint: "Aparece junto al texto de la historia de la familia.", fields: *foto }
+              - { label: "Foto del encabezado del Menú", name: "menu", widget: "object", hint: "Solo se ve en pantallas grandes.", fields: *foto }
+              - label: "Postal 1 (Comunidad)"
+                name: "postal1"
+                widget: "object"
+                hint: "Primera de las 4 fotos chiquitas en 'Postales de la barra'."
+                fields: &postal
+                  - { label: "Imagen", name: "imagen", widget: "image" }
+                  - { label: "Descripción de la foto", name: "alt", widget: "string", hint: "Qué se ve en la foto, en una frase." }
+                  - { label: "Texto debajo de la foto", name: "pie", widget: "string" }
+              - { label: "Postal 2 (Comunidad)", name: "postal2", widget: "object", fields: *postal }
+              - { label: "Postal 3 (Comunidad)", name: "postal3", widget: "object", fields: *postal }
+              - { label: "Postal 4 (Comunidad)", name: "postal4", widget: "object", fields: *postal }
+          - label: "Contacto y horario"
+            name: "contacto"
+            widget: "object"
+            fields:
+              - { label: "Dirección (calle, número y colonia)", name: "direccion", widget: "string" }
+              - { label: "Ciudad", name: "localidad", widget: "string" }
+              - { label: "Estado", name: "estado", widget: "string" }
+              - { label: "Código postal", name: "cp", widget: "string", pattern: ['^\d{5}$', "Deben ser 5 dígitos, ej. 33700"] }
+              - { label: "Teléfono (solo dígitos con +52)", name: "telefono", widget: "string", hint: "Para los enlaces de llamada y WhatsApp.", pattern: ['^\+52\d{10}$', "Formato: +52 seguido de 10 dígitos, sin espacios. Ej. +526481469847"] }
+              - { label: "Teléfono (para mostrar)", name: "telefonoDisplay", widget: "string", hint: "Como quieres que se vea, ej. +52 648 146 9847" }
+              - label: "Horario"
+                name: "horario"
+                widget: "object"
+                hint: "Usa formato de 24 horas: 07:00 son las 7 de la mañana, 22:00 son las 10 de la noche. Si cierran después de medianoche, pon la hora de cierre tal cual (ej. 01:00)."
+                fields:
+                  - { label: "Lun–Sáb apertura", name: "lunSabApertura", widget: "string", pattern: &hora ['^([01]\d|2[0-3]):[0-5]\d$', "Formato de 24 horas con dos dígitos, ej. 07:00 o 22:00"] }
+                  - { label: "Lun–Sáb cierre", name: "lunSabCierre", widget: "string", pattern: *hora }
+                  - { label: "Domingo apertura", name: "domApertura", widget: "string", pattern: *hora }
+                  - { label: "Domingo cierre", name: "domCierre", widget: "string", pattern: *hora }
+              - { label: "Facebook (URL completa)", name: "facebook", widget: "string", pattern: ['^https://', "Debe empezar con https://"] }
+              - { label: "Instagram (URL completa)", name: "instagram", widget: "string", pattern: ['^https://', "Debe empezar con https://"] }
 
   - name: "menu"
     label: "Menú"
@@ -76,13 +96,15 @@ collections:
           - label: "Categorías"
             name: "categorias"
             widget: "list"
+            min: 1
             hint: "No solo bebidas — agrega las categorías que necesites (Comida, Postres, lo que vendan). Usa 'Add' para una categoría nueva."
             fields:
               - { label: "Nombre de la categoría", name: "nombre", widget: "string", hint: "Ej. Espresso, Para comer, Postres..." }
               - label: "Productos"
                 name: "items"
                 widget: "list"
+                min: 1
                 hint: "Bebidas, comida, o cualquier otra cosa — cada renglón es un producto con su precio."
                 fields:
                   - { label: "Nombre", name: "nombre", widget: "string" }
-                  - { label: "Precio", name: "precio", widget: "string" }
+                  - { label: "Precio", name: "precio", widget: "string", hint: "Ej. $45" }

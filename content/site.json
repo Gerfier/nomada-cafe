@@ -9,7 +9,7 @@
   },
   "comunidad": {
     "quote": "Aquí no hay clientes de una sola vez. Si vienes una vez, la próxima ya sabemos cómo te gusta el café.",
-    "atribucion": "Un mensaje de la familia Nómada :)",
+    "atribucion": "Un mensaje de la familia Nómada",
     "copy": "Nómada también es el foro de Camargo: noches de música en vivo, club de lectura, arte local en las paredes y mercados de emprendedores. Si tienes una idea para reunir gente, aquí hay una mesa para ti."
   },
   "mantra": {
@@ -18,25 +18,27 @@
     "nota": "Advertencia: puede causar adicción"
   },
   "fotos": {
-    "sello": "images/nomada-sello.png",
-    "principal": "images/nomada-storefront-sign.jpg",
-    "quienes": "images/nomada-chemex-pourover.jpg",
-    "menu": "images/nomada-espresso-pull.jpg",
-    "postal1": "images/nomada-canon-hike.jpg",
-    "postal2": "images/nomada-laptop-drink.jpg",
-    "postal3": "images/nomada-bigben-postal.jpg",
-    "postal4": "images/nomada-cup-studio-bw.jpg"
+    "sello": { "imagen": "images/nomada-sello.png", "alt": "Sello de Nómada Café de Especialidad" },
+    "principal": { "imagen": "images/nomada-storefront-sign.jpg", "alt": "Fachada de Nómada, café de especialidad, en su local en Camargo" },
+    "quienes": { "imagen": "images/nomada-chemex-pourover.jpg", "alt": "Chemex con café filtrado y una taza junto a una bolsa de café Nómada" },
+    "menu": { "imagen": "images/nomada-espresso-pull.jpg", "alt": "Espresso cayendo en la taza en la barra de Nómada" },
+    "postal1": { "imagen": "images/nomada-canon-hike.jpg", "alt": "Vaso de Nómada para llevar sostenido frente a un cañón", "pie": "Para llevar, rumbo al cañón" },
+    "postal2": { "imagen": "images/nomada-laptop-drink.jpg", "alt": "Persona trabajando en su laptop con una bebida de Nómada", "pie": "Mesa de trabajo, tarde larga" },
+    "postal3": { "imagen": "images/nomada-bigben-postal.jpg", "alt": "Termo de Nómada frente al Big Ben, en Londres", "pie": "De gira por Londres" },
+    "postal4": { "imagen": "images/nomada-cup-studio-bw.jpg", "alt": "Vaso de Nómada en blanco y negro", "pie": "El vaso de siempre" }
   },
   "contacto": {
     "direccion": "Allende 105, Col. Centro",
-    "ciudad": "Ciudad Camargo, Chihuahua, C.P. 33700, México",
+    "localidad": "Ciudad Camargo",
+    "estado": "Chihuahua",
+    "cp": "33700",
     "telefono": "+526481469847",
     "telefonoDisplay": "+52 648 146 9847",
     "horario": {
-      "lunSabApertura": "7:00 am",
-      "lunSabCierre": "10:00 pm",
-      "domApertura": "9:00 am",
-      "domCierre": "10:00 pm"
+      "lunSabApertura": "07:00",
+      "lunSabCierre": "22:00",
+      "domApertura": "09:00",
+      "domCierre": "22:00"
     },
     "facebook": "https://www.facebook.com/nomadacafe/",
     "instagram": "https://www.instagram.com/ganasdenomadacafe/"
