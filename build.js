@@ -62,14 +62,14 @@ function imgAttrs(slot, foto) {
     attrs.srcset = cfg.widths.map(w => cdnUrl(foto.imagen, w) + ' ' + w + 'w').join(', ');
     attrs.sizes = cfg.sizes;
   } else {
-    attrs.src = sitePath(foto.imagen);
+    attrs.src = sitePath(foto.imagen).slice(1);
   }
   return Object.keys(attrs).map(k => k + '="' + escapeHtml(attrs[k]) + '"').join(' ');
 }
 
 function heroPreload(foto) {
   const cfg = IMAGE_SLOTS.principal;
-  if (!USE_IMAGE_CDN) return '<link rel="preload" as="image" fetchpriority="high" href="' + escapeHtml(sitePath(foto.imagen)) + '">';
+  if (!USE_IMAGE_CDN) return '<link rel="preload" as="image" fetchpriority="high" href="' + escapeHtml(sitePath(foto.imagen).slice(1)) + '">';
   const srcset = cfg.widths.map(w => cdnUrl(foto.imagen, w) + ' ' + w + 'w').join(', ');
   return '<link rel="preload" as="image" fetchpriority="high" imagesrcset="' + escapeHtml(srcset) + '" imagesizes="' + escapeHtml(cfg.sizes) + '">';
 }
